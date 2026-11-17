@@ -1,0 +1,26 @@
+  <section class="phero cipria wrap" data-header="dark">
+    <svg class="star" data-spin="140" viewBox="0 0 500 564" aria-hidden="true" style="color:var(--rosso);opacity:.9"><use href="#oyra-star"/></svg>
+    <div class="top mono page-in"><span class="eyebrow"><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg>Journal</span><span>Note dallo studio</span></div>
+    <h1 class="page-title">Il <span class="serif">journal</span></h1>
+    <div class="bottom">
+      <p class="lede page-in">Idee, guide e retroscena sul nostro lavoro. Scritti per chi deve <em>far crescere un marchio</em>, non per altri designer.</p>
+      <div class="side page-in">
+        <div class="filters" role="group" aria-label="Filtra gli articoli">
+          <button type="button" aria-pressed="true" data-jfilter="all">Tutti</button>
+          <button type="button" aria-pressed="false" data-jfilter="Brand">Brand</button>
+          <button type="button" aria-pressed="false" data-jfilter="Guide">Guide</button>
+          <button type="button" aria-pressed="false" data-jfilter="Web">Web</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec bg-crema wrap end-round" data-header="dark">
+{{JOURNAL_FEATURED}}
+    <div class="sec-top" style="margin-bottom:clamp(24px,3vw,40px)"><h2 class="sec-title split" style="font-size:clamp(36px,5vw,80px)">Tutti <span class="serif">gli articoli</span></h2></div>
+    <div class="j-grid">
+{{JOURNAL_CARDS}}
+      <p class="j-empty" hidden>Nessun articolo in questa categoria, per ora.</p>
+    </div>
+{{NEWSLETTER}}
+  </section>

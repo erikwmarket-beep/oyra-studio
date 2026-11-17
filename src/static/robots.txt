@@ -1,0 +1,6 @@
+# Dominio temporaneo: per ora il sito non viene indicizzato.
+# Quando passi al dominio definitivo sostituisci con:
+#   User-agent: *
+#   Allow: /
+User-agent: *
+Disallow: /

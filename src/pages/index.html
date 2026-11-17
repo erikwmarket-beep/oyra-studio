@@ -1,0 +1,91 @@
+  <section class="hero" id="hero" data-header="light">
+    <div class="hero-card wrap" id="hero-card">
+      <div class="hero-mid">
+        <h1 id="hero-title"><span class="ht">Diamo forma a brand che</span>
+          <span class="rot" id="rot" aria-live="off"><span>si ricordano</span><span>fanno rumore</span><span>hanno carattere</span><span>si muovono</span></span></h1>
+        <a class="badge magnet" href="#manifesto" aria-label="Scorri al manifesto">
+          <svg class="ring" viewBox="0 0 160 160" aria-hidden="true"><defs><path id="circ" d="M80 80m-64 0a64 64 0 1 1 128 0a64 64 0 1 1-128 0"/></defs><text><textPath href="#circ">Scorri ✱ Scopri ✱ OYRA Studio ✱ </textPath></text></svg>
+          <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-down"/></svg></span>
+        </a>
+      </div>
+      <div>
+        <div class="hero-meta mono">
+          <span>Studio creativo indipendente</span>
+          <span class="hide-s">Identità · Siti web · Motion</span>
+          <span>Milano <span data-clock>--:--</span></span>
+        </div>
+        <div class="hero-mark">
+          <svg class="logo" id="hero-logo" viewBox="0 0 3192 1272" role="img" aria-label="OYRA">
+            <g class="star-g" id="hero-star"><g class="star-g" id="hero-star-in"><use href="#oyra-star" x="1344" y="0" width="500" height="564"/></g></g>
+            <g id="hero-word"><use href="#oyra-word" x="0" y="628" width="3192" height="644"/></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto wrap" id="manifesto" data-header="dark">
+    <div class="lbl mono"><span class="eyebrow"><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg>Manifesto</span><span>(01)</span></div>
+    <p class="big" id="manifesto-text">Siamo un piccolo studio <span class="chip c1"></span> con un debole per i colori pieni e le lettere grandi. Costruiamo identità, siti e animazioni per marchi che preferiscono <em>farsi ricordare</em> <span class="chip c2"></span> piuttosto che piacere a tutti. Ogni progetto ha il suo asterisco <span class="chip c3"><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></span> cioè il dettaglio che lo rende solo tuo.</p>
+    <div class="man-foot">
+      <p>Lavoriamo con aziende, negozi, ristoranti e progetti culturali. Pochi clienti alla volta, seguiti dalle stesse persone dall'inizio alla fine.</p>
+      <a class="btn magnet" href="studio.html">Conosci lo studio <svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></a>
+    </div>
+  </section>
+
+  <section class="work wrap" id="lavori" data-header="dark">
+    <div class="sec-top">
+      <h2 class="sec-title split">Lavori <span class="serif">scelti</span><sup>(06)</sup></h2>
+      <div class="filters" role="group" aria-label="Filtra i lavori">
+        <button type="button" aria-pressed="true" data-filter="all">Tutti</button>
+        <button type="button" aria-pressed="false" data-filter="brand">Branding</button>
+        <button type="button" aria-pressed="false" data-filter="web">Web</button>
+        <button type="button" aria-pressed="false" data-filter="motion">Motion</button>
+      </div>
+    </div>
+
+{{PROJECT_CARDS}}
+
+{{PROJECT_ROWS}}
+    <div style="display:flex;justify-content:center;margin-top:clamp(40px,5vw,64px)"><a class="btn magnet" href="progetti.html" style="background:var(--inchiostro);color:var(--crema)">Tutti i progetti <svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></a></div>
+  </section>
+
+  <section class="services" id="servizi" data-header="light">
+    <div class="head wrap">
+      <div class="sec-top" style="margin-bottom:0">
+        <h2 class="sec-title split">Cosa <span class="serif">facciamo</span></h2>
+        <span class="mono" style="opacity:.7">(02) — Quattro discipline, uno studio</span>
+      </div>
+    </div>
+    <div class="h-wrap" id="h-wrap">
+      <div class="h-track" id="h-track">
+        <article class="svc intro"><p>Ogni progetto parte dal marchio e arriva dove serve: carta, schermo, movimento.</p><span class="mono">Scorri →</span></article>
+        <article class="svc s1"><div class="top mono"><span>Identità</span><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></div><h3>Brand <em>identity</em></h3><div style="display:grid;gap:16px"><p>Nome, logo, colori, caratteri e regole d'uso. Un sistema che regge su un'insegna come su una storia di Instagram.</p><ul><li>Naming</li><li>Logo</li><li>Brand book</li><li>Packaging</li></ul></div><svg class="deco" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></article>
+        <article class="svc s2"><div class="top mono"><span>Digitale</span><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></div><h3>Siti <em>web</em></h3><div style="display:grid;gap:16px"><p>Siti veloci e animati, progettati e sviluppati in casa. Facili da aggiornare anche senza di noi.</p><ul><li>UX / UI</li><li>Sviluppo</li><li>E-commerce</li><li>CMS</li></ul></div><svg class="deco" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></article>
+        <article class="svc s3"><div class="top mono"><span>Movimento</span><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></div><h3>Motion <em>design</em></h3><div style="display:grid;gap:16px"><p>Loghi animati, video per i social, transizioni e micro-interazioni che danno ritmo al marchio.</p><ul><li>Logo animato</li><li>Social</li><li>3D</li><li>Interfacce</li></ul></div><svg class="deco" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></article>
+        <article class="svc s4"><div class="top mono"><span>Immagine</span><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></div><h3>Art <em>direction</em></h3><div style="display:grid;gap:16px"><p>Shooting, campagne e contenuti: decidiamo luce, colore e set perché tutto parli con la stessa voce.</p><ul><li>Campagne</li><li>Fotografia</li><li>Contenuti</li></ul></div><svg class="deco" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></article>
+        <a class="svc intro" href="servizi.html" data-cursor="Apri" style="text-decoration:none"><p>Tempi, formule e domande frequenti.</p><span class="mono">Tutti i servizi →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="velocity" aria-label="Le nostre discipline" data-header="light">
+    <div class="v-row a" data-dir="-1"><span>Branding <svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg> Web <svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg> Motion <svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></span></div>
+    <div class="v-row b" data-dir="1"><span>Idee <em>con cura</em> Forme <em>con carattere</em></span></div>
+  </section>
+
+  <section class="process wrap" id="metodo" data-header="dark">
+    <div class="sec-top">
+      <h2 class="sec-title split">Il <span class="serif">metodo</span></h2>
+      <span class="mono" style="opacity:.7">(03) — Da 6 a 12 settimane in media</span>
+    </div>
+    <div class="stack">
+      <article class="step"><span class="num">01</span><div class="body"><h3>Ascolto <em>e ricerca</em></h3><p>Partiamo da un incontro: chi sei, a chi parli, cosa fanno gli altri. Ne esce un documento breve con gli obiettivi e le domande giuste.</p><div class="sfoot mono"><span>Workshop · Analisi</span><span>1–2 settimane</span></div></div></article>
+      <article class="step"><span class="num">02</span><div class="body"><h3>Strategia <em>e idea</em></h3><p>Definiamo posizionamento, tono di voce e la direzione visiva. Ti mostriamo due o tre strade, ne scegliamo una insieme.</p><div class="sfoot mono"><span>Posizionamento · Moodboard</span><span>1–2 settimane</span></div></div></article>
+      <article class="step"><span class="num">03</span><div class="body"><h3>Design <em>e sviluppo</em></h3><p>Disegniamo il logo, il sistema e tutte le applicazioni. Se c'è un sito, lo progettiamo e sviluppiamo in parallelo.</p><div class="sfoot mono"><span>Identità · Sito · Motion</span><span>3–6 settimane</span></div></div></article>
+      <article class="step"><span class="num">04</span><div class="body"><h3>Lancio <em>e cura</em></h3><p>Consegniamo file, brand book e sito online. Poi restiamo a disposizione per i primi mesi, per aggiustare e far crescere.</p><div class="sfoot mono"><span>Consegna · Supporto</span><span>1–2 settimane</span></div></div></article>
+    </div>
+  </section>
+
+{{JOURNAL_TEASER}}
+{{CTA}}

@@ -1,0 +1,56 @@
+# Pubblica automaticamente il sito su Hostinger a ogni push sul branch main.
+# 1. ricostruisce le pagine con build.py
+# 2. carica la cartella site/ via FTP (solo i file cambiati)
+#
+# Impostazioni richieste nel repository GitHub (Settings → Secrets and variables → Actions):
+#   Secrets:   FTP_SERVER    es. ftp.tuodominio.com oppure l'IP mostrato in hPanel
+#              FTP_USERNAME  es. u123456789 (oppure u123456789.tuodominio)
+#              FTP_PASSWORD  la password dell'account FTP
+#   Variable:  FTP_SERVER_DIR  cartella del sito sul server, deve finire con /
+#              es. public_html/   oppure   domains/nome-temporaneo.hostingersite.com/public_html/
+#   Variable facoltativa: FTP_PROTOCOL  ftps (predefinito) oppure ftp se il server non accetta TLS
+name: Deploy su Hostinger
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il codice
+        uses: actions/checkout@v4
+
+      - name: Prepara Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Costruisci il sito
+        run: python3 build.py
+
+      - name: Controlla i file generati
+        run: |
+          test -f site/index.html
+          test -f site/assets/oyra.css
+          ls -la site
+
+      - name: Carica su Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          port: 21
+          local-dir: ./site/
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
+          exclude: |
+            **/.git*
+            **/.git*/**

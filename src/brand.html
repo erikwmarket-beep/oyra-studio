@@ -1,0 +1,547 @@
+<title>OYRA Brand Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Unbounded:wght@300..900&display=swap">
+<style>
+/* Layout: brand book a fasce piene (rosso / crema / inchiostro), indice laterale sticky su desktop, griglia a 12 colonne.
+   Look unico e voluto (colori di marca), quindi niente variante dark/light: ogni colore è dichiarato esplicitamente. */
+:root{
+  --rosso:#E11A45; --crema:#EFECD7; --inchiostro:#1B0A10; --bordeaux:#7D0A2A; --cipria:#F7C6CE; --mandarino:#FF6A2B;
+  --crema-2:#E4DFC3; --linea:rgba(27,10,16,.16); --linea-chiara:rgba(239,236,215,.22);
+  --f-display:"Unbounded","Archivo Black","Arial Black",sans-serif;
+  --f-text:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-serif:"Instrument Serif","Times New Roman",serif;
+  --f-mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--crema);color:var(--inchiostro);font:400 16px/1.55 var(--f-text);-webkit-font-smoothing:antialiased}
+::selection{background:var(--rosso);color:var(--crema)}
+svg.logo{display:block;width:100%;height:auto}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1320px;margin:0 auto}
+.band{padding-block:clamp(64px,10vw,140px)}
+.band.rosso{background:var(--rosso);color:var(--crema)}
+.band.ink{background:var(--inchiostro);color:var(--crema)}
+.band.crema{background:var(--crema)}
+.band.cipria{background:var(--cipria)}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;display:flex;gap:12px;align-items:center}
+.eyebrow::before{content:"";width:10px;height:10px;background:currentColor;mask:var(--star) center/contain no-repeat;-webkit-mask:var(--star) center/contain no-repeat}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:-.02em;line-height:.98;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,6.4vw,96px);text-transform:uppercase;overflow-wrap:anywhere}
+h3{font-size:clamp(20px,2vw,26px);font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.serif{font-family:var(--f-serif);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em}
+p{margin:0;max-width:62ch;text-wrap:pretty}
+.lead{font-size:clamp(18px,1.6vw,22px);line-height:1.45}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.sec-head .t{grid-column:1/9;display:grid;gap:24px}
+.sec-head .d{grid-column:9/13}
+@media (max-width:860px){.sec-head .t,.sec-head .d{grid-column:1/-1}}
+
+/* ---------- Cover ---------- */
+.cover{min-height:min(100svh,980px);display:grid;grid-template-rows:auto 1fr auto;background:var(--rosso);color:var(--crema);padding-block:24px;position:relative;overflow:hidden}
+.cover .top,.cover .bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cover .mid{display:grid;place-items:center;padding-block:48px}
+.cover .mid svg{width:min(820px,92%)}
+.cover .bottom .mono{opacity:.85}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.16;mix-blend-mode:multiply;background-image:var(--noise)}
+.spin{animation:spin 18s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- Index ---------- */
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:1px solid var(--linea)}
+.toc a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1px solid var(--linea);color:inherit;text-decoration:none;font:600 clamp(18px,1.6vw,22px)/1.1 var(--f-display);margin-right:24px;transition:color .3s var(--ease),padding .3s var(--ease)}
+.toc a span{font:500 12px var(--f-mono)}
+.toc a:hover,.toc a:focus-visible{color:var(--rosso);padding-left:8px;outline:none}
+
+/* ---------- Concept ---------- */
+.concept{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.concept .big{grid-column:1/8;font:500 clamp(28px,3.6vw,52px)/1.08 var(--f-display);letter-spacing:-.025em}
+.concept .big em{font-family:var(--f-serif);font-weight:400;font-size:1.12em}
+.concept .side{grid-column:9/13;display:grid;gap:20px;align-content:end}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(48px,7vw,96px);border-top:1px solid var(--linea-chiara)}
+.values div{padding:24px 24px 0 0;display:grid;gap:10px;border-right:1px solid var(--linea-chiara);padding-left:20px}
+.values div:first-child{padding-left:0}
+.values div:last-child{border-right:0}
+.values b{font:700 22px/1 var(--f-display);text-transform:uppercase}
+@media (max-width:860px){.concept .big,.concept .side{grid-column:1/-1}.values{grid-template-columns:1fr 1fr}.values div{border-right:0;padding-left:0;padding-bottom:24px}}
+
+/* ---------- Logo ---------- */
+.logo-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.tile{border-radius:20px;position:relative;overflow:hidden;display:grid;place-items:center;padding:clamp(28px,5vw,64px);min-height:280px}
+.tile .cap{position:absolute;left:18px;bottom:16px;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.tile .cap.r{left:auto;right:18px}
+.t-main{grid-column:1/-1;background:var(--rosso);color:var(--crema);min-height:min(56vw,560px)}
+.t-main svg{width:min(640px,80%)}
+.t-6{grid-column:span 6}.t-4{grid-column:span 4}.t-3{grid-column:span 3}
+@media (max-width:860px){.t-6,.t-4,.t-3{grid-column:1/-1}}
+.bg-r{background:var(--rosso);color:var(--crema)}.bg-c{background:var(--crema-2);color:var(--rosso)}.bg-i{background:var(--inchiostro);color:var(--crema)}.bg-p{background:var(--cipria);color:var(--bordeaux)}.bg-b{background:var(--bordeaux);color:var(--cipria)}
+.tile svg.word{width:82%}.tile svg.star{width:min(120px,40%)}.tile svg.full{width:78%}
+
+.anat{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;margin-top:clamp(48px,7vw,96px)}
+@media (max-width:860px){.anat{grid-template-columns:1fr}}
+.anat-fig{position:relative;background:var(--crema-2);border-radius:20px;padding:clamp(40px,7vw,96px);color:var(--rosso)}
+.anat-fig .box{position:relative;outline:1.5px dashed rgba(225,26,69,.55);outline-offset:clamp(16px,3vw,40px)}
+.anat-fig .x{position:absolute;font:500 11px var(--f-mono);color:var(--inchiostro);letter-spacing:.08em}
+.anat ul{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--linea)}
+.anat li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--linea)}
+.anat li b{font:600 13px/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.06em}
+
+.donts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:clamp(48px,7vw,96px)}
+@media (max-width:980px){.donts{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.donts{grid-template-columns:1fr}}
+.dont{display:grid;gap:12px}
+.dont .tile{min-height:180px;padding:32px}
+.dont .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1.5px),var(--inchiostro) calc(50% - 1.5px),var(--inchiostro) calc(50% + 1.5px),transparent calc(50% + 1.5px));opacity:.85}
+.dont p{font-size:14px}
+
+/* ---------- Colore ---------- */
+.swatches{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.sw{border-radius:20px;padding:22px;display:grid;align-content:space-between;min-height:300px;gap:28px;position:relative}
+.sw.big{grid-column:span 6;min-height:420px}
+.sw.small{grid-column:span 3}
+.sw.small .name{font-size:clamp(20px,1.9vw,28px)}
+@media (max-width:980px){.sw.big{grid-column:1/-1}.sw.small{grid-column:span 6}}
+@media (max-width:520px){.sw.small{grid-column:1/-1}}
+.sw .name{font:700 clamp(24px,2.6vw,36px)/1 var(--f-display);text-transform:uppercase;letter-spacing:-.02em}
+.sw .role{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-top:8px}
+.sw dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0;font:400 12px/1.5 var(--f-mono)}
+.sw dt{opacity:.7}.sw dd{margin:0}
+.sw button{all:unset;cursor:pointer;position:absolute;bottom:18px;right:18px;font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:99px;border:1px solid currentColor;transition:background .3s var(--ease),color .3s var(--ease)}
+.sw button:hover,.sw button:focus-visible{background:currentColor}
+.sw button:hover span,.sw button:focus-visible span{filter:invert(1);mix-blend-mode:difference}
+.ratio{display:flex;height:72px;border-radius:14px;overflow:hidden;margin-top:40px}
+.ratio div{display:flex;align-items:flex-end;padding:10px 12px;font:500 11px var(--f-mono);letter-spacing:.06em}
+.ratio-legend{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:14px}
+.pairs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px}
+@media (max-width:860px){.pairs{grid-template-columns:1fr 1fr}}
+.pair{border-radius:16px;padding:20px;min-height:150px;display:grid;align-content:space-between;gap:16px}
+.pair .aa{font:700 44px/1 var(--f-display)}
+.pair .mono{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+
+/* ---------- Tipografia ---------- */
+.type-hero{font:800 clamp(44px,11.5vw,190px)/.86 var(--f-display);letter-spacing:-.05em;text-transform:uppercase;margin:0 0 clamp(40px,6vw,72px)}
+.type-hero .serif{font-size:1.04em;letter-spacing:-.03em;color:var(--mandarino)}
+.fonts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:860px){.fonts{grid-template-columns:1fr}}
+.font{border:1px solid var(--linea-chiara);border-radius:20px;padding:28px;display:grid;gap:20px;align-content:start}
+.font{min-width:0}
+.font .spec{font-size:clamp(34px,6vw,88px);line-height:.95;overflow-wrap:anywhere}
+.font .chars{font-size:18px;line-height:1.5;opacity:.85;word-break:break-all}
+.font .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:500 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.scale{margin-top:clamp(48px,7vw,96px);border-top:1px solid var(--linea-chiara)}
+.scale div{display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--linea-chiara);min-width:0}
+.scale div>*{min-width:0;overflow-wrap:anywhere}
+.scale .mono{opacity:.7}
+@media (max-width:620px){.scale div{grid-template-columns:1fr;gap:6px}}
+
+/* ---------- Moodboard ---------- */
+.mood{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(90px,9vw,130px);gap:12px}
+.m{border-radius:18px;overflow:hidden;position:relative;display:grid;place-items:center}
+.m .cap{position:absolute;left:14px;bottom:12px;font:500 10.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.m1{grid-column:1/6;grid-row:span 4;background:var(--bordeaux);color:var(--rosso)}
+.m1 svg{width:78%}
+.m2{grid-column:6/9;grid-row:span 2;background:var(--crema-2);color:var(--inchiostro)}
+.m2 .aa{font:800 clamp(64px,8vw,120px)/1 var(--f-display);letter-spacing:-.05em}
+.m3{grid-column:9/13;grid-row:span 3;background:linear-gradient(180deg,#FF6A2B 0%,#E11A45 48%,#7D0A2A 100%)}
+.m3 .sun{width:58%;aspect-ratio:1;border-radius:50%;background:var(--cipria);mask:repeating-linear-gradient(180deg,#000 0 14px,transparent 14px 22px);-webkit-mask:repeating-linear-gradient(180deg,#000 0 14px,transparent 14px 22px);transform:translateY(22%)}
+.m4{grid-column:6/9;grid-row:span 2;background:var(--rosso);display:grid;align-content:center;justify-items:start;place-items:center start;gap:8px;padding:18px 24px}
+.m4 i{width:100%}
+.m4 i{display:block;height:22px;border-radius:99px;background:var(--crema)}
+.m5{grid-column:9/13;grid-row:span 2;background:var(--cipria);color:var(--rosso)}
+.m5 p{font:400 italic clamp(30px,3.4vw,52px)/1 var(--f-serif);text-align:center;padding:0 16px}
+.m6{grid-column:1/4;grid-row:span 3;background:var(--cipria);background-image:radial-gradient(var(--rosso) 28%,transparent 30%);background-size:16px 16px}
+.m7{grid-column:4/9;grid-row:span 3;background:var(--inchiostro);color:var(--crema);overflow:hidden}
+.m7 .row{white-space:nowrap;font:800 clamp(34px,4vw,60px)/1 var(--f-display);text-transform:uppercase;letter-spacing:-.03em;animation:mq 16s linear infinite}
+.m7 .row.b{animation-direction:reverse;color:var(--rosso)}
+.m7 .rows{display:grid;gap:6px;width:100%;min-width:0;overflow:hidden}
+.m{contain:paint}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.m8{grid-column:9/11;grid-row:span 2;background:var(--mandarino);color:var(--inchiostro)}
+.m8 svg{width:46%}
+.m9{grid-column:11/13;grid-row:span 2;background:var(--crema-2);background-image:linear-gradient(var(--linea) 1px,transparent 1px),linear-gradient(90deg,var(--linea) 1px,transparent 1px);background-size:20px 20px;color:var(--inchiostro)}
+.m9 .mono{background:var(--crema);padding:6px 10px;border-radius:99px}
+.m10{grid-column:1/5;grid-row:span 2;background:var(--rosso);color:var(--crema);overflow:hidden}
+.m10 svg{width:200%;transform:translateX(18%)}
+.m11{grid-column:5/9;grid-row:span 2;background:repeating-linear-gradient(90deg,var(--rosso) 0 22px,var(--mandarino) 22px 44px,var(--cipria) 44px 66px,var(--crema) 66px 88px)}
+.m12{grid-column:9/13;grid-row:span 2;background:var(--crema-2);display:grid;grid-template-columns:repeat(2,1fr);gap:0;padding:0}
+.m12 span{display:grid;place-items:center;font:700 clamp(14px,1.4vw,18px) var(--f-display);text-transform:uppercase;border:1px solid var(--linea);color:var(--inchiostro)}
+.m12 span:nth-child(1){background:var(--rosso);color:var(--crema)}.m12 span:nth-child(4){background:var(--inchiostro);color:var(--crema)}
+@media (max-width:980px){
+  .mood{grid-template-columns:repeat(6,1fr);grid-auto-rows:110px}
+  .m1{grid-column:1/-1;grid-row:span 3}.m2,.m4,.m8,.m9{grid-column:span 3;grid-row:span 2}
+  .m3,.m5,.m6,.m7,.m10,.m11,.m12{grid-column:1/-1;grid-row:span 2}
+}
+.mood-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.mood-notes div{display:grid;gap:10px;align-content:start;border-top:1.5px solid var(--inchiostro);padding-top:16px}
+@media (max-width:860px){.mood-notes{grid-template-columns:1fr}}
+
+/* ---------- Brand board ---------- */
+.board{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(120px,auto);gap:10px;background:var(--crema);padding:10px;border-radius:26px;color:var(--inchiostro)}
+.b{border-radius:18px;padding:22px;position:relative;overflow:hidden;display:grid;gap:12px;align-content:space-between}
+.b .mono{text-transform:uppercase;letter-spacing:.1em;font-size:10.5px}
+.b-logo{grid-column:1/4;grid-row:span 3;background:var(--rosso);color:var(--crema);place-items:center;align-content:center}
+.b-logo svg{width:82%}
+.b-star{grid-column:4/5;grid-row:span 2;background:var(--inchiostro);color:var(--rosso);place-items:center;align-content:center}
+.b-star svg{width:62%}
+.b-type{grid-column:5/7;grid-row:span 2;background:var(--crema-2)}
+.b-type .aa{font:800 72px/.9 var(--f-display);letter-spacing:-.05em}
+.b-type .aa em{font:400 italic 80px var(--f-serif);color:var(--rosso)}
+.b-pal{grid-column:4/7;grid-row:span 1;padding:0;display:grid;grid-template-columns:3fr 2fr 1.4fr 1fr 1fr 1fr;gap:0}
+.b-pal span{display:flex;align-items:flex-end;padding:12px;font:500 10px var(--f-mono);letter-spacing:.05em}
+.b-pat{grid-column:1/3;grid-row:span 2;background-color:var(--bordeaux);color:var(--rosso);padding:0}
+.b-pat .pat{position:absolute;inset:0;background-image:var(--star-r);background-size:44px 50px;opacity:.95}
+.b-voice{grid-column:3/5;grid-row:span 2;background:var(--cipria);color:var(--bordeaux)}
+.b-voice p{font:500 clamp(22px,2.2vw,30px)/1.1 var(--f-display);letter-spacing:-.02em}
+.b-voice p em{font:400 italic 1.15em var(--f-serif)}
+.b-card{grid-column:5/7;grid-row:span 2;background:var(--crema-2);place-items:center;align-content:center}
+.card{width:min(260px,90%);aspect-ratio:85/55;border-radius:10px;background:var(--rosso);color:var(--crema);display:grid;padding:14px;grid-template-rows:1fr auto;box-shadow:0 18px 30px -18px rgba(27,10,16,.5);transform:rotate(-6deg)}
+.card.back{background:var(--crema);color:var(--inchiostro);transform:rotate(4deg) translate(14px,-40px);margin-bottom:-40px}
+.card svg{width:52%}
+.card .mono{font-size:8.5px;letter-spacing:.06em;display:flex;justify-content:space-between}
+@media (max-width:860px){.board{grid-template-columns:1fr 1fr}.b-logo,.b-pal,.b-pat,.b-voice,.b-card,.b-type{grid-column:1/-1}.b-star{grid-column:1/2}.b-type{grid-column:2/3}.b-type .aa{font-size:52px}.b-type .aa em{font-size:56px}}
+
+/* ---------- Elementi grafici / motion ---------- */
+.els{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:860px){.els{grid-template-columns:1fr}}
+.el{border-radius:20px;background:var(--crema-2);padding:24px;display:grid;gap:16px;align-content:start}
+.el .stage{height:200px;border-radius:14px;background:var(--rosso);position:relative;overflow:hidden;display:grid;place-items:center;color:var(--crema)}
+.pill-stack{display:grid;gap:8px;width:70%}
+.pill-stack i{height:30px;border-radius:99px;background:var(--crema);transform-origin:left;animation:grow 2.4s var(--ease) infinite alternate}
+.pill-stack i:nth-child(2){width:72%;animation-delay:.15s}.pill-stack i:nth-child(3){width:46%;animation-delay:.3s}
+@keyframes grow{from{transform:scaleX(.3)}to{transform:scaleX(1)}}
+.cut{font:800 64px/1 var(--f-display);letter-spacing:-.04em;position:relative}
+.cut::after{content:"";position:absolute;left:-10%;right:-10%;top:52%;height:4px;background:var(--rosso)}
+.motion-stage svg{width:72px}
+.motion-stage .s1{animation:spin 3.2s var(--ease) infinite}
+.ease-curve{width:100%;height:auto}
+
+/* ---------- Voce ---------- */
+.voice{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:860px){.voice{grid-template-columns:1fr}}
+.vcol{border-radius:20px;padding:28px;display:grid;gap:16px;align-content:start}
+.vcol.si{background:var(--crema);color:var(--inchiostro)}
+.vcol.no{background:transparent;border:1px solid var(--linea-chiara)}
+.vcol ul{margin:0;padding:0;list-style:none;display:grid;gap:0}
+.vcol li{padding:14px 0;border-bottom:1px solid currentColor;border-color:rgba(127,127,127,.25);font:500 clamp(17px,1.5vw,20px)/1.3 var(--f-text)}
+.vcol .tag{font:600 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- Applicazioni ---------- */
+.apps{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.app{border-radius:20px;overflow:hidden;position:relative;display:grid;place-items:center;min-height:360px;padding:32px}
+.a-post{grid-column:span 4;background:var(--crema-2)}
+.a-poster{grid-column:span 4;background:var(--inchiostro)}
+.a-web{grid-column:span 4;background:var(--cipria)}
+@media (max-width:980px){.a-post,.a-poster,.a-web{grid-column:1/-1}}
+.ig{width:min(300px,100%);aspect-ratio:4/5;background:var(--rosso);border-radius:8px;color:var(--crema);padding:18px;display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 30px 50px -30px rgba(27,10,16,.6)}
+.ig h4{margin:0;font:800 34px/.92 var(--f-display);text-transform:uppercase;letter-spacing:-.04em;align-self:end}
+.ig h4 em{font:400 italic 1.1em var(--f-serif);text-transform:none}
+.poster{width:min(270px,100%);aspect-ratio:2/3;background:var(--crema);color:var(--rosso);padding:16px;display:grid;grid-template-rows:auto 1fr auto;border-radius:4px}
+.poster .ring{display:grid;place-items:center}
+.poster .ring svg{width:70%}
+.mini{width:min(340px,100%);border-radius:10px;overflow:hidden;background:var(--rosso);color:var(--crema);box-shadow:0 30px 50px -30px rgba(27,10,16,.6)}
+.mini .bar{display:flex;gap:5px;padding:9px;background:var(--bordeaux)}
+.mini .bar i{width:8px;height:8px;border-radius:50%;background:var(--cipria);opacity:.7}
+.mini .body{padding:16px;display:grid;gap:14px}
+.mini .nav{display:flex;justify-content:space-between;font:500 8px var(--f-mono);letter-spacing:.08em;text-transform:uppercase}
+.mini .h{font:800 30px/.9 var(--f-display);text-transform:uppercase;letter-spacing:-.04em}
+.mini .h em{font:400 italic 1.1em var(--f-serif);text-transform:none;color:var(--cipria)}
+.app .cap{position:absolute;left:18px;top:16px;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+
+footer.end{background:var(--rosso);color:var(--crema);padding-block:64px 28px}
+footer.end .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--inchiostro);color:var(--crema);font:500 12px var(--f-mono);letter-spacing:.06em;padding:12px 18px;border-radius:99px;transition:transform .5s var(--ease);z-index:20}
+.toast.on{transform:translate(-50%,0)}
+.toast:empty{visibility:hidden}
+@media (max-width:620px){.tile .cap.r{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+<!--BODY-->
+<!--SYMBOLS-->
+
+<header class="cover wrap">
+  <div class="grain"></div>
+  <div class="top inner" style="width:100%">
+    <span class="mono">OYRA STUDIO — BRAND BOOK</span>
+    <span class="mono">V.02 · NOVEMBRE 2026</span>
+  </div>
+  <div class="mid">
+    <svg class="logo" viewBox="0 0 3192 1512" role="img" aria-label="OYRA Studio"><use href="#oyra-full"/></svg>
+  </div>
+  <div class="bottom inner" style="width:100%">
+    <span class="mono">Identità · Colore · Tipografia · Moodboard · Linee guida</span>
+    <span class="mono">Uso interno e partner</span>
+  </div>
+</header>
+
+<section class="band crema wrap" id="indice">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="t"><span class="eyebrow">Indice</span><h2>Il sistema<br><span class="serif">in otto parti</span></h2></div>
+      <p class="d">Questo documento definisce come OYRA si mostra: logo, colori, caratteri, immagini e tono di voce. Serve a chi progetta per noi e con noi, perché ogni pezzo sembri uscito dallo stesso studio.</p>
+    </div>
+    <nav class="toc" aria-label="Sezioni">
+      <a href="#concept">Concept <span>01</span></a>
+      <a href="#logo">Logo <span>02</span></a>
+      <a href="#colore">Colore <span>03</span></a>
+      <a href="#tipografia">Tipografia <span>04</span></a>
+      <a href="#moodboard">Moodboard <span>05</span></a>
+      <a href="#board">Brand board <span>06</span></a>
+      <a href="#elementi">Elementi & motion <span>07</span></a>
+      <a href="#voce">Voce & applicazioni <span>08</span></a>
+    </nav>
+  </div>
+</section>
+
+<section class="band ink wrap" id="concept">
+  <div class="inner">
+    <span class="eyebrow" style="margin-bottom:40px">01 — Concept</span>
+    <div class="concept" style="margin-top:32px">
+      <p class="big">Un asterisco è una nota a margine che cambia il senso della frase. OYRA lavora così: <em>il dettaglio</em> che rende un brand impossibile da confondere.</p>
+      <div class="side">
+        <p>Il logotipo ha lettere larghe e tagliate, con tagli netti e curve morbide: ricorda la grafica italiana degli anni '70 rivista con strumenti di oggi. L'asterisco sopra la Y è la firma dello studio, e diventa il segno che usiamo per indicare ciò che conta.</p>
+        <p class="mono" style="opacity:.7">DIREZIONE · RETRO-FUTURO MEDITERRANEO</p>
+      </div>
+    </div>
+    <div class="values">
+      <div><b>Audace</b><p>Un colore pieno, lettere grandi, scelte nette.</p></div>
+      <div><b>Caldo</b><p>Rosso, crema, luce di pomeriggio. Mai freddo o tecnico.</p></div>
+      <div><b>Preciso</b><p>Griglia, misure e tagli sono decisi, non casuali.</p></div>
+      <div><b>Giocoso</b><p>Movimento, ironia, un asterisco dove non te lo aspetti.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band crema wrap" id="logo">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="t"><span class="eyebrow">02 — Logo</span><h2>Marchio,<br><span class="serif">logotipo e firma</span></h2></div>
+      <p class="d">Il logo principale unisce asterisco, logotipo OYRA e la dicitura STUDIO. Logotipo e asterisco possono vivere anche da soli, secondo le regole qui sotto.</p>
+    </div>
+    <div class="logo-grid">
+      <div class="tile t-main"><svg class="logo" viewBox="0 0 3192 1512" role="img" aria-label="Logo principale"><use href="#oyra-full"/></svg><span class="cap">Logo principale · Crema su Rosso</span><span class="cap r">Versione preferita</span></div>
+      <div class="tile t-6 bg-c"><svg class="logo full" viewBox="0 0 3192 1512" aria-hidden="true"><use href="#oyra-full"/></svg><span class="cap" style="color:var(--inchiostro)">Negativo · Rosso su Crema</span></div>
+      <div class="tile t-6 bg-i"><svg class="logo full" viewBox="0 0 3192 1512" aria-hidden="true"><use href="#oyra-full"/></svg><span class="cap">Su Inchiostro</span></div>
+      <div class="tile t-4 bg-r"><svg class="logo word" viewBox="0 0 3192 644" aria-hidden="true"><use href="#oyra-word"/></svg><span class="cap">Logotipo · da solo</span></div>
+      <div class="tile t-4 bg-p"><svg class="logo star" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg><span class="cap">Asterisco · favicon, avatar, segno</span></div>
+      <div class="tile t-4 bg-b"><svg class="logo word" viewBox="0 0 3192 644" aria-hidden="true"><use href="#oyra-word"/></svg><span class="cap">Su Bordeaux · Cipria</span></div>
+    </div>
+
+    <div class="anat">
+      <div class="anat-fig">
+        <div class="box"><svg class="logo" viewBox="0 0 3192 1512" aria-hidden="true"><use href="#oyra-full"/></svg></div>
+        <span class="x" style="top:14px;left:50%;transform:translateX(-50%)">½ X</span>
+        <span class="x" style="left:14px;top:50%;transform:translateY(-50%)">½ X</span>
+        <span class="x" style="right:14px;top:50%;transform:translateY(-50%)">½ X</span>
+        <span class="x" style="bottom:14px;left:50%;transform:translateX(-50%)">½ X</span>
+      </div>
+      <ul>
+        <li><b>Unità X</b><span>L'altezza delle lettere del logotipo OYRA. Tutte le misure del logo derivano da qui.</span></li>
+        <li><b>Area di rispetto</b><span>Almeno ½ X libera su ogni lato. Nessun testo, bordo o immagine entra in quest'area.</span></li>
+        <li><b>Misura minima</b><span>Logo principale: 120 px / 30 mm di larghezza. Logotipo: 80 px / 20 mm. Asterisco: 16 px / 5 mm.</span></li>
+        <li><b>Colore</b><span>Solo le coppie della palette: Crema su Rosso (preferita), Rosso su Crema, Crema su Inchiostro, Cipria su Bordeaux.</span></li>
+        <li><b>STUDIO</b><span>Nel logo principale STUDIO segue il colore del logotipo. Non si separa e non si sostituisce con altre parole.</span></li>
+      </ul>
+    </div>
+
+    <div class="donts">
+      <div class="dont"><div class="tile bg-r"><svg class="logo full" viewBox="0 0 3192 1512" style="transform:scaleX(1.35) scaleY(.75)" aria-hidden="true"><use href="#oyra-full"/></svg></div><p><b>Non deformare.</b> Il logo si scala solo in modo proporzionale.</p></div>
+      <div class="dont"><div class="tile" style="background:var(--cipria);color:var(--mandarino)"><svg class="logo full" viewBox="0 0 3192 1512" aria-hidden="true"><use href="#oyra-full"/></svg></div><p><b>Non usare coppie fuori palette</b> o con poco contrasto.</p></div>
+      <div class="dont"><div class="tile bg-c"><svg class="logo full" viewBox="0 0 3192 1512" style="transform:rotate(-14deg);filter:drop-shadow(8px 10px 0 #1B0A10)" aria-hidden="true"><use href="#oyra-full"/></svg></div><p><b>Non ruotare</b> e non aggiungere ombre, contorni o effetti.</p></div>
+      <div class="dont"><div class="tile" style="background:var(--rosso);color:var(--crema)"><svg viewBox="0 0 3192 644" style="width:80%" aria-hidden="true"><use href="#oyra-word"/></svg><svg viewBox="0 0 500 564" style="position:absolute;width:44px;right:22px;top:20px" aria-hidden="true"><use href="#oyra-star"/></svg></div><p><b>Non spostare l'asterisco</b> rispetto al logotipo nel logo composto.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band crema wrap" id="colore" style="padding-top:0">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="t"><span class="eyebrow">03 — Colore</span><h2>Rosso pieno,<br><span class="serif">crema calda</span></h2></div>
+      <p class="d">Due colori fanno il marchio, quattro lo accompagnano. Il Rosso OYRA va usato in grandi superfici piene: è lui a farci riconoscere da lontano.</p>
+    </div>
+    <div class="swatches" id="swatches">
+      <div class="sw big" style="background:var(--rosso);color:var(--crema)" data-hex="#E11A45"><div><div class="name">Rosso OYRA</div><div class="role">Primario · superfici</div></div><dl><dt>HEX</dt><dd>#E11A45</dd><dt>RGB</dt><dd>225 · 26 · 69</dd><dt>CMYK*</dt><dd>0 · 88 · 69 · 12</dd></dl><button type="button"><span>Copia</span></button></div>
+      <div class="sw big" style="background:var(--crema-2);color:var(--inchiostro)" data-hex="#EFECD7"><div><div class="name" style="color:var(--rosso)">Crema</div><div class="role">Primario · logo e testo su rosso</div></div><dl><dt>HEX</dt><dd>#EFECD7</dd><dt>RGB</dt><dd>239 · 236 · 215</dd><dt>CMYK*</dt><dd>0 · 1 · 10 · 6</dd></dl><button type="button"><span>Copia</span></button></div>
+      <div class="sw small" style="background:var(--inchiostro);color:var(--crema)" data-hex="#1B0A10"><div><div class="name">Inchiostro</div><div class="role">Testo · fondi scuri</div></div><dl><dt>HEX</dt><dd>#1B0A10</dd><dt>RGB</dt><dd>27 · 10 · 16</dd><dt>CMYK*</dt><dd>0 · 63 · 41 · 89</dd></dl><button type="button"><span>Copia</span></button></div>
+      <div class="sw small" style="background:var(--bordeaux);color:var(--cipria)" data-hex="#7D0A2A"><div><div class="name">Bordeaux</div><div class="role">Profondità · ombre</div></div><dl><dt>HEX</dt><dd>#7D0A2A</dd><dt>RGB</dt><dd>125 · 10 · 42</dd><dt>CMYK*</dt><dd>0 · 92 · 66 · 51</dd></dl><button type="button"><span>Copia</span></button></div>
+      <div class="sw small" style="background:var(--cipria);color:var(--bordeaux)" data-hex="#F7C6CE"><div><div class="name">Cipria</div><div class="role">Fondi morbidi</div></div><dl><dt>HEX</dt><dd>#F7C6CE</dd><dt>RGB</dt><dd>247 · 198 · 206</dd><dt>CMYK*</dt><dd>0 · 20 · 17 · 3</dd></dl><button type="button"><span>Copia</span></button></div>
+      <div class="sw small" style="background:var(--mandarino);color:var(--inchiostro)" data-hex="#FF6A2B"><div><div class="name">Mandarino</div><div class="role">Accento · max 5%</div></div><dl><dt>HEX</dt><dd>#FF6A2B</dd><dt>RGB</dt><dd>255 · 106 · 43</dd><dt>CMYK*</dt><dd>0 · 58 · 83 · 0</dd></dl><button type="button"><span>Copia</span></button></div>
+    </div>
+    <p class="mono" style="margin-top:16px;opacity:.7">* Valori CMYK indicativi, calcolati dall'RGB. Per la stampa verificare sempre con una prova colore.</p>
+
+    <div class="ratio" aria-label="Proporzioni d'uso">
+      <div style="flex:45;background:var(--rosso);color:var(--crema)">45%</div>
+      <div style="flex:30;background:var(--crema-2);color:var(--inchiostro)">30%</div>
+      <div style="flex:12;background:var(--inchiostro);color:var(--crema)">12%</div>
+      <div style="flex:6;background:var(--bordeaux);color:var(--cipria)">6%</div>
+      <div style="flex:4;background:var(--cipria);color:var(--bordeaux)">4</div>
+      <div style="flex:3;background:var(--mandarino)"></div>
+    </div>
+    <div class="ratio-legend mono"><span>PROPORZIONI D'USO INDICATIVE IN UNA PAGINA O CAMPAGNA</span><span>MANDARINO SOLO PER PICCOLI ACCENTI · 3%</span></div>
+
+    <div class="pairs">
+      <div class="pair" style="background:var(--rosso);color:var(--crema)"><span class="aa">Aa</span><span class="mono"><span>CREMA / ROSSO</span><span>3.9:1 · titoli ≥ 24px</span></span></div>
+      <div class="pair" style="background:var(--crema-2);color:var(--inchiostro)"><span class="aa">Aa</span><span class="mono"><span>INCHIOSTRO / CREMA</span><span>15:1 · tutto</span></span></div>
+      <div class="pair" style="background:var(--inchiostro);color:var(--crema)"><span class="aa">Aa</span><span class="mono"><span>CREMA / INCHIOSTRO</span><span>16:1 · tutto</span></span></div>
+      <div class="pair" style="background:var(--cipria);color:var(--bordeaux)"><span class="aa">Aa</span><span class="mono"><span>BORDEAUX / CIPRIA</span><span>7:1 · tutto</span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band ink wrap" id="tipografia">
+  <div class="inner">
+    <span class="eyebrow">04 — Tipografia</span>
+    <p class="type-hero" style="margin-top:40px">Forma <span class="serif">&amp;</span> carattere</p>
+    <div class="fonts">
+      <div class="font"><div class="meta"><span>Display · titoli</span><span>Google Fonts · OFL</span></div><div class="spec" style="font-family:var(--f-display);font-weight:800;letter-spacing:-.04em;font-size:clamp(30px,4.8vw,72px)">Unbounded</div><div class="chars" style="font-family:var(--f-display)">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 ✱</div><p>Larga e arrotondata come il logotipo. Per titoli, numeri grandi e parole chiave, quasi sempre in maiuscolo con spaziatura stretta (−2% / −5%).</p></div>
+      <div class="font"><div class="meta"><span>Testo · interfaccia</span><span>Google Fonts · OFL</span></div><div class="spec" style="font-family:var(--f-text);font-weight:600;font-stretch:112%;letter-spacing:-.03em">Archivo</div><div class="chars" style="font-family:var(--f-text)">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr 0123456789</div><p>Per paragrafi, menu, pulsanti. L'asse di larghezza permette di allargarla nei sottotitoli per richiamare il logo.</p></div>
+      <div class="font"><div class="meta"><span>Accento editoriale</span><span>Google Fonts · OFL</span></div><div class="spec" style="font-family:var(--f-serif);font-style:italic">Instrument Serif</div><div class="chars" style="font-family:var(--f-serif);font-style:italic">con cura, con calma, con carattere</div><p>Solo corsivo, solo per una o due parole dentro un titolo in Unbounded. Mai per paragrafi interi.</p></div>
+      <div class="font"><div class="meta"><span>Utility · etichette</span><span>Google Fonts · OFL</span></div><div class="spec" style="font-family:var(--f-mono);font-weight:500;font-size:clamp(40px,5vw,72px)">Geist Mono</div><div class="chars" style="font-family:var(--f-mono)">FIG. 01 — 2026 — MILANO 45.46°N</div><p>Etichette, numeri di progetto, date, didascalie. Maiuscolo, 11–13 px, spaziatura +8% / +14%.</p></div>
+    </div>
+    <div class="scale">
+      <div><span class="mono">H1 · 120/0.9</span><span style="font:800 clamp(44px,8vw,120px)/.9 var(--f-display);letter-spacing:-.05em;text-transform:uppercase">Brand*</span></div>
+      <div><span class="mono">H2 · 64/1</span><span style="font:700 clamp(32px,5vw,64px)/1 var(--f-display);letter-spacing:-.03em;text-transform:uppercase">Lavori scelti</span></div>
+      <div><span class="mono">H3 · 26/1.1</span><span style="font:600 26px/1.1 var(--f-display);letter-spacing:-.01em">Identità per un forno di quartiere</span></div>
+      <div><span class="mono">BODY · 18/1.55</span><span style="font:400 18px/1.55 var(--f-text)">Progettiamo identità e siti per marchi che vogliono farsi notare senza alzare la voce.</span></div>
+      <div><span class="mono">LABEL · 12/1</span><span style="font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase">Progetto 07 — Branding, Web</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band crema wrap" id="moodboard">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="t"><span class="eyebrow">05 — Moodboard</span><h2>Sole, carta<br><span class="serif">e velocità</span></h2></div>
+      <p class="d">Manifesti italiani anni '70, strisce da pista, tramonti stampati in serigrafia, retini e griglie da tipografo. Tutto ridotto alla palette OYRA.</p>
+    </div>
+    <div class="mood">
+      <div class="m m1"><svg class="logo spin" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg><span class="cap" style="color:var(--cipria)">Il segno · in rotazione</span></div>
+      <div class="m m2"><span class="aa">Aa</span><span class="cap">Unbounded 800</span></div>
+      <div class="m m3"><div class="sun"></div><span class="cap" style="color:var(--crema)">Tramonto serigrafico</span></div>
+      <div class="m m4"><i></i><i style="width:70%"></i><i style="width:40%"></i><span class="cap" style="color:var(--crema)">Pillole · dal contro-forma della O</span></div>
+      <div class="m m5"><p>con cura,<br>senza noia</p><span class="cap" style="color:var(--inchiostro)">Instrument Serif</span></div>
+      <div class="m m6"><span class="cap" style="background:var(--cipria);color:var(--bordeaux);padding:4px 8px;border-radius:99px">Retino</span></div>
+      <div class="m m7"><div class="rows"><div class="row">Brand ✱ Web ✱ Motion ✱ Brand ✱ Web ✱ Motion ✱&nbsp;</div><div class="row b">Identità ✱ Siti ✱ Idee ✱ Identità ✱ Siti ✱ Idee ✱&nbsp;</div></div><span class="cap" style="color:var(--cipria)">Ritmo · marquee</span></div>
+      <div class="m m8"><svg class="logo" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg><span class="cap">Mandarino · accento</span></div>
+      <div class="m m9"><span class="mono">FIG. 07 — 1:1</span><span class="cap">Griglia</span></div>
+      <div class="m m10"><svg class="logo" viewBox="0 0 3192 644" aria-hidden="true"><use href="#oyra-word"/></svg><span class="cap">Crop del logotipo</span></div>
+      <div class="m m11"><span class="cap" style="background:var(--crema);padding:4px 8px;border-radius:99px">Strisce da pista</span></div>
+      <div class="m m12"><span>Audace</span><span>Caldo</span><span>Preciso</span><span>Giocoso</span></div>
+    </div>
+    <div class="mood-notes">
+      <div><h3>Fotografia</h3><p>Flash diretto, colori saturi, ombre nette. Oggetti su fondali di carta colorata, persone colte in movimento. Luce mediterranea di tardo pomeriggio.</p></div>
+      <div><h3>Texture</h3><p>Grana leggera su tutte le superfici piene (opacità 10–16%), retini a punti e strisce. Mai sfumature digitali lucide o vetro smerigliato.</p></div>
+      <div><h3>Forme</h3><p>Rettangoli molto arrotondati presi dalla O, tagli orizzontali presi dalla R, l'asterisco come punto di attenzione.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band rosso wrap" id="board">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="t"><span class="eyebrow">06 — Brand board</span><h2>Tutto OYRA<br><span class="serif">in una pagina</span></h2></div>
+      <p class="d">Il riassunto da tenere aperto mentre si progetta: marchio, segno, colori, caratteri, pattern e tono.</p>
+    </div>
+    <div class="board">
+      <div class="b b-logo"><svg class="logo" viewBox="0 0 3192 1512" aria-hidden="true"><use href="#oyra-full"/></svg></div>
+      <div class="b b-star"><svg class="logo spin" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></div>
+      <div class="b b-type"><span class="mono">Unbounded · Instrument Serif</span><span class="aa">Aa<em>a</em></span></div>
+      <div class="b b-pal"><span style="background:#E11A45;color:#EFECD7">E11A45</span><span style="background:#E4DFC3">EFECD7</span><span style="background:#1B0A10;color:#EFECD7">1B0A10</span><span style="background:#7D0A2A;color:#F7C6CE">7D0A2A</span><span style="background:#F7C6CE;color:#7D0A2A">F7C6CE</span><span style="background:#FF6A2B">FF6A2B</span></div>
+      <div class="b b-pat"><div class="pat"></div></div>
+      <div class="b b-voice"><span class="mono">Tono di voce</span><p>Diretti, caldi, <em>un po' ironici.</em> Mai urlati.</p></div>
+      <div class="b b-card"><div><div class="card"><svg class="logo" viewBox="0 0 3192 1512" aria-hidden="true"><use href="#oyra-full"/></svg><span class="mono"><span>OYRA STUDIO</span><span>MILANO</span></span></div><div class="card back"><svg viewBox="0 0 500 564" style="width:22px;color:var(--rosso)" aria-hidden="true"><use href="#oyra-star"/></svg><span class="mono"><span>ciao@oyra.studio</span><span>oyra.studio</span></span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band crema wrap" id="elementi">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="t"><span class="eyebrow">07 — Elementi & motion</span><h2>Forme che<br><span class="serif">si muovono</span></h2></div>
+      <p class="d">Gli elementi grafici nascono dal logo. Il movimento è rapido in entrata e morbido in chiusura, come una frenata controllata.</p>
+    </div>
+    <div class="els">
+      <div class="el"><div class="stage motion-stage"><svg class="s1" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></div><h3>Asterisco</h3><p>Segna ciò che conta: un'informazione, un hover, un cursore. Ruota di 90° (o multipli) sulle interazioni.</p></div>
+      <div class="el"><div class="stage"><div class="pill-stack"><i></i><i></i><i></i></div></div><h3>Pillole</h3><p>Contenitori arrotondati presi dal contro-forma della O. Raggio pieno su pulsanti e tag, 20 px sulle card.</p></div>
+      <div class="el"><div class="stage" style="background:var(--crema)"><span class="cut" style="color:var(--inchiostro)">OYRA</span></div><h3>Taglio</h3><p>Una linea orizzontale che attraversa titoli e immagini, come il taglio della R. Usarla una sola volta per pagina.</p></div>
+    </div>
+    <div class="anat" style="margin-top:56px">
+      <div class="anat-fig" style="padding:32px">
+        <svg class="ease-curve" viewBox="0 0 400 220" role="img" aria-label="Curva di easing expo out">
+          <rect x="0" y="0" width="400" height="220" fill="none"/>
+          <path d="M40 190 H380 M40 190 V20" stroke="#1B0A10" stroke-opacity=".3" fill="none"/>
+          <path d="M40 190 C 128 30, 160 26, 380 22" stroke="#E11A45" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="40" cy="190" r="6" fill="#1B0A10"/><circle cx="380" cy="22" r="6" fill="#E11A45"/>
+          <text x="44" y="212" font-family="Geist Mono, monospace" font-size="11" fill="#1B0A10">0s</text>
+          <text x="330" y="212" font-family="Geist Mono, monospace" font-size="11" fill="#1B0A10">0.9s</text>
+          <text x="210" y="80" font-family="Geist Mono, monospace" font-size="11" fill="#1B0A10">cubic-bezier(.22,1,.36,1)</text>
+        </svg>
+      </div>
+      <ul>
+        <li><b>Easing</b><span>Expo out <code>cubic-bezier(.22,1,.36,1)</code> per entrate e hover.</span></li>
+        <li><b>Durate</b><span>Micro-interazioni 0.3–0.5 s, testi in entrata 0.8–1.2 s, transizioni di pagina 1–1.4 s.</span></li>
+        <li><b>Scroll</b><span>Scroll fluido (Lenis, lerp 0.1). Testi che si rivelano riga per riga, elementi fissati durante lo scorrimento.</span></li>
+        <li><b>Rispetto</b><span>Con "riduci movimento" attivo, tutto appare senza animazioni.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band ink wrap" id="voce">
+  <div class="inner">
+    <div class="sec-head">
+      <div class="t"><span class="eyebrow">08 — Voce & applicazioni</span><h2>Come<br><span class="serif">parliamo</span></h2></div>
+      <p class="d">Scriviamo come parleremmo a un cliente al bancone del bar: frasi corte, verbi attivi, niente gergo da agenzia.</p>
+    </div>
+    <div class="voice">
+      <div class="vcol si"><span class="tag">Scriviamo così</span><ul><li>Facciamo brand che si ricordano.</li><li>Ti mandiamo tre proposte entro venerdì.</li><li>Il sito nuovo carica in un secondo.</li><li>Scrivici, rispondiamo in giornata.</li></ul></div>
+      <div class="vcol no"><span class="tag">Non così</span><ul><li>Soluzioni di branding olistiche e data-driven.</li><li>Sinergie per massimizzare l'engagement.</li><li>Un'esperienza digitale immersiva a 360°.</li><li>Contattaci per maggiori informazioni.</li></ul></div>
+    </div>
+    <div class="apps" style="margin-top:56px">
+      <div class="app a-post"><span class="cap" style="color:var(--inchiostro)">Post social 4:5</span><div class="ig"><span class="mono" style="display:flex;justify-content:space-between"><span>OYRA ✱</span><span>07/26</span></span><h4>Nuovo <em>lavoro</em> online</h4><span class="mono">Branding · Web · Motion</span></div></div>
+      <div class="app a-poster"><span class="cap" style="color:var(--cipria)">Manifesto 2:3</span><div class="poster"><span class="mono" style="display:flex;justify-content:space-between"><span>OYRA STUDIO</span><span>2026</span></span><div class="ring"><svg class="spin" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg></div><svg viewBox="0 0 3192 644" aria-hidden="true"><use href="#oyra-word"/></svg></div></div>
+      <div class="app a-web"><span class="cap" style="color:var(--bordeaux)">Sito web</span><div class="mini"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="nav"><span>OYRA✱</span><span>Lavori · Studio · Contatti</span></div><div class="h">Brand che <em>restano</em></div><svg viewBox="0 0 3192 644" aria-hidden="true"><use href="#oyra-word"/></svg></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="end wrap">
+  <div class="inner">
+    <svg class="logo" viewBox="0 0 3192 644" aria-hidden="true"><use href="#oyra-word"/></svg>
+    <div class="row"><span class="mono">OYRA STUDIO — BRAND BOOK V.02</span><span class="mono">Domande sul marchio: scrivere allo studio</span></div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  // pattern con l'asterisco e grana, generati come data URI
+  var starPath = document.querySelector('#oyra-star path').getAttribute('d');
+  function starSvg(color, w, h, s){
+    return 'url("data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+w+' '+h+'" width="'+w+'" height="'+h+'"><g transform="translate('+(w-500*s)/2+','+(h-564*s)/2+') scale('+s+')"><path fill="'+color+'" d="'+starPath+'"/></g></svg>') + '")';
+  }
+  var r = document.documentElement.style;
+  r.setProperty('--star', starSvg('#000',500,564,1));
+  r.setProperty('--star-r', starSvg('#E11A45',44,50,.05));
+  var c = document.createElement('canvas'); c.width = c.height = 160;
+  var x = c.getContext('2d'), d = x.createImageData(160,160);
+  for (var i=0;i<d.data.length;i+=4){var v=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}
+  x.putImageData(d,0,0); r.setProperty('--noise','url('+c.toDataURL()+')');
+
+  var toast = document.getElementById('toast'), tt;
+  function say(t){toast.textContent=t;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},1800)}
+  document.querySelectorAll('.sw button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var hex = b.closest('.sw').dataset.hex;
+      var done = function(){ say(hex + ' copiato'); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(hex).then(done, function(){ say('Copia non disponibile: ' + hex); });
+      } else { say('Copia non disponibile: ' + hex); }
+    });
+  });
+})();
+</script>

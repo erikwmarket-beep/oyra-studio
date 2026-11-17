@@ -1,0 +1,39 @@
+  <section class="phero crema wrap" data-header="dark">
+    <svg class="star" data-spin="120" viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg>
+    <div class="top mono page-in"><span class="eyebrow"><svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg>Progetti</span><span>2024 — 2026</span></div>
+    <h1 class="page-title">Lavori <span class="serif">scelti</span></h1>
+    <div class="bottom">
+      <p class="lede page-in">Forni, cantine, festival, biciclette. Marchi diversi con una cosa in comune: <em>un dettaglio</em> che li rende solo loro.</p>
+      <div class="side page-in"><p class="body-t">Ogni progetto ha la sua storia: la sfida, l'idea e cosa abbiamo consegnato.</p></div>
+    </div>
+  </section>
+
+  <section class="work wrap" id="lavori" data-header="dark" style="padding-top:clamp(24px,4vw,48px)">
+    <div class="tools">
+      <div class="filters" role="group" aria-label="Filtra i progetti">
+        <button type="button" aria-pressed="true" data-filter="all">Tutti</button>
+        <button type="button" aria-pressed="false" data-filter="brand">Branding</button>
+        <button type="button" aria-pressed="false" data-filter="web">Web</button>
+        <button type="button" aria-pressed="false" data-filter="motion">Motion</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px">
+        <span class="mono count" data-count>(06)</span>
+        <div class="view" role="group" aria-label="Vista">
+          <button type="button" aria-pressed="true" data-view="grid">Griglia</button>
+          <button type="button" aria-pressed="false" data-view="list">Elenco</button>
+        </div>
+      </div>
+    </div>
+    <div class="pview" data-pview="grid">
+{{PROJECT_CARDS}}
+    </div>
+    <div class="pview" data-pview="list" hidden>
+{{PROJECT_ROWS_FLAT}}
+    </div>
+  </section>
+
+  <section class="velocity" aria-label="Settori" data-header="light">
+    <div class="v-row b" data-dir="1"><span>Cibo <em>e vino</em> Cultura <em>e musica</em> Design <em>e architettura</em> Mobilità <em>e sport</em></span></div>
+  </section>
+
+{{CTA}}

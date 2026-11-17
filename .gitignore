@@ -1,0 +1,7 @@
+# file generati da build.py (il sito viene ricostruito da GitHub Actions)
+site/
+brand/index.html
+dist-artifact/
+__pycache__/
+*.pyc
+.DS_Store
