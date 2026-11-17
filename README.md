@@ -21,18 +21,27 @@
 - Verifica tempi, revisioni e formule in `servizi.html`
 
 ## Pubblicazione automatica su Hostinger
-Ogni push sul branch `main` avvia `.github/workflows/deploy.yml`:
-GitHub ricostruisce il sito con `build.py` e carica `site/` su Hostinger via FTP (solo i file cambiati).
-Lo stato di ogni pubblicazione si vede nella scheda **Actions** del repository.
+Ogni push sul branch `main` avvia `.github/workflows/deploy.yml`: GitHub ricostruisce il sito con
+`build.py` e pubblica la cartella `site/` sul branch **`deploy`**. Lo stato si vede nella scheda **Actions**.
 
-Configurazione una tantum (GitHub → Settings → Secrets and variables → Actions):
-| Tipo | Nome | Dove lo trovi in Hostinger (hPanel → Siti web → Gestisci → File → Account FTP) |
+### Metodo consigliato: Git di Hostinger (nessuna password da salvare)
+1. hPanel → Siti web → Gestisci → **Avanzate → GIT**
+2. Repository: `https://github.com/UTENTE/REPO.git` (repo privato: usa l'indirizzo SSH `git@github.com:UTENTE/REPO.git`
+   e aggiungi la chiave SSH mostrata da Hostinger in GitHub → Settings → Deploy keys)
+3. Branch: `deploy` · Cartella: lasciala vuota (la cartella `public_html` deve essere vuota) → **Crea**
+4. Clicca **Distribuisci** una volta, poi **Deploy automatico**: copia l'URL del webhook
+5. GitHub → Settings → Webhooks → Add webhook → incolla l'URL, evento "Just the push event" → Add
+
+### Alternativa: FTP
+Se il Git di Hostinger non è disponibile nel piano, aggiungi in GitHub → Settings → Secrets and variables → Actions:
+| Tipo | Nome | Dove lo trovi (hPanel → File → Account FTP) |
 |---|---|---|
-| Secret | `FTP_SERVER` | "Host FTP" (es. `ftp.nomesito.hostingersite.com` o un IP) |
-| Secret | `FTP_USERNAME` | "Nome utente FTP" (es. `u123456789`) |
-| Secret | `FTP_PASSWORD` | la password FTP (puoi reimpostarla lì) |
-| Variable | `FTP_SERVER_DIR` | cartella del sito, con `/` finale. Con l'utente FTP principale di solito `public_html/` o `domains/NOME-DOMINIO/public_html/` |
-| Variable (facoltativa) | `FTP_PROTOCOL` | `ftp` se l'invio con `ftps` fallisce |
+| Secret | `FTP_SERVER` | Host FTP |
+| Secret | `FTP_USERNAME` | Nome utente FTP |
+| Secret | `FTP_PASSWORD` | Password FTP |
+| Variable | `FTP_SERVER_DIR` | cartella del sito con `/` finale, di solito `public_html/` |
+| Variable (facoltativa) | `FTP_PROTOCOL` | `ftp` se `ftps` fallisce |
 
-Per pubblicare a mano: Actions → "Deploy su Hostinger" → Run workflow.
+Con `FTP_SERVER` impostato, il workflow carica anche via FTP. Per ripubblicare a mano: Actions → "Deploy su Hostinger" → Run workflow.
+
 Quando passi al dominio definitivo aggiorna `src/static/robots.txt` (ora blocca l'indicizzazione).

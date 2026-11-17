@@ -1,20 +1,22 @@
-# Pubblica automaticamente il sito su Hostinger a ogni push sul branch main.
-# 1. ricostruisce le pagine con build.py
-# 2. carica la cartella site/ via FTP (solo i file cambiati)
+# Pubblica automaticamente il sito a ogni push sul branch main.
+#  1. ricostruisce le pagine con build.py
+#  2. pubblica la cartella site/ sul branch "deploy"
+#     -> Hostinger (hPanel → Avanzate → Git) è collegato a quel branch con il deploy automatico
+#  3. (facoltativo) carica site/ anche via FTP, solo se esiste il secret FTP_SERVER
 #
-# Impostazioni richieste nel repository GitHub (Settings → Secrets and variables → Actions):
-#   Secrets:   FTP_SERVER    es. ftp.tuodominio.com oppure l'IP mostrato in hPanel
-#              FTP_USERNAME  es. u123456789 (oppure u123456789.tuodominio)
-#              FTP_PASSWORD  la password dell'account FTP
-#   Variable:  FTP_SERVER_DIR  cartella del sito sul server, deve finire con /
-#              es. public_html/   oppure   domains/nome-temporaneo.hostingersite.com/public_html/
-#   Variable facoltativa: FTP_PROTOCOL  ftps (predefinito) oppure ftp se il server non accetta TLS
+# Per l'FTP servono in Settings → Secrets and variables → Actions:
+#   Secrets:   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+#   Variable:  FTP_SERVER_DIR  (es. public_html/ , con la barra finale)
+#   Variable facoltativa: FTP_PROTOCOL = ftp se ftps non funziona
 name: Deploy su Hostinger
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 concurrency:
   group: deploy-hostinger
@@ -23,6 +25,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
     steps:
       - name: Scarica il codice
         uses: actions/checkout@v4
@@ -39,9 +43,22 @@ jobs:
         run: |
           test -f site/index.html
           test -f site/assets/oyra.css
+          test -f site/.htaccess
           ls -la site
 
-      - name: Carica su Hostinger via FTP
+      - name: Pubblica sul branch deploy (per Hostinger Git)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: deploy
+          publish_dir: ./site
+          force_orphan: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Sito pubblicato da ${{ github.sha }}'
+
+      - name: Carica su Hostinger via FTP (facoltativo)
+        if: env.FTP_SERVER != ''
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
