@@ -186,7 +186,7 @@ ORBIT = ('<svg viewBox="0 0 128 128" aria-hidden="true"><path d="M91 22c-9-7-20-
 
 
 def photo_gallery(p):
-    tiles = ''.join(f'<figure class="g ph {w}"><img src="assets/img/{p["slug"]}/{f}.jpg" alt="{html.escape(c)}" loading="lazy"><figcaption class="cap">{c}</figcaption></figure>' for f, w, c in p['photos'])
+    tiles = ''.join(f'<figure class="g ph {w}"><img src="assets/img/{p["slug"]}/{f}.jpg" alt="{html.escape(c or p['name'])}" loading="lazy">{f'<figcaption class="cap">{c}</figcaption>' if c else ''}</figure>' for f, w, c in p['photos'])
     pal = ''.join(f'<span style="background:{h};color:{txt(h)}"><b>{n}</b>{h}</span>' for n, h in p['palette'])
     bg, ac, ink = p['colors']
     return f'''  <section class="sec bg-crema wrap" data-header="dark" style="padding-top:0">

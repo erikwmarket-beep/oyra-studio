@@ -1,0 +1,381 @@
+<title>Brand book Immobiliare Sociale</title>
+<meta name="description" content="Linee guida del marchio Immobiliare Sociale by Pellicciotta Immobili: logo, colori, caratteri, fotografia, tono di voce e applicazioni.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: brand book editoriale su carta calda, fasce teal profondo per i capitoli chiave, griglia a 12 colonne.
+   Look unico e voluto (colori del marchio Immobiliare Sociale): ogni colore è dichiarato, niente variante scura. */
+:root{
+  --teal:#2F7286; --teal-hi:#4FB3C8; --teal-deep:#174452; --magenta:#CF1259; --magenta-hi:#FF3D84;
+  --ink:#071519; --paper:#F6F1EA; --paper-2:#EDE5DA; --text:#0B1C21; --muted:#4E6066; --white:#FFFFFF;
+  --line:rgba(11,28,33,.12); --line-d:rgba(234,243,242,.16);
+  --f-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --f-serif:"Instrument Serif",Georgia,serif;
+  --f-body:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font:400 16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--magenta);color:var(--white)}
+img{display:block;max-width:100%}
+.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.inner{max-width:1280px;margin:0 auto}
+.band{padding-block:clamp(72px,10vw,140px)}
+.band.deep{background:var(--teal-deep);color:#EAF3F2}
+.band.ink{background:var(--ink);color:#EAF3F2}
+.band.paper2{background:var(--paper-2)}
+.lbl{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:inline-flex;gap:10px;align-items:center}
+.deep .lbl,.ink .lbl{color:var(--teal-hi)}
+.lbl::before{content:"";width:22px;height:1.5px;background:currentColor}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;letter-spacing:-.035em;line-height:.98;margin:0;text-wrap:balance}
+h2{font-size:clamp(40px,6.4vw,96px)}
+h3{font-size:clamp(20px,1.9vw,26px);font-weight:600;letter-spacing:-.02em;line-height:1.15}
+em.s{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--magenta);letter-spacing:-.01em}
+.deep em.s,.ink em.s{color:var(--magenta-hi)}
+p{margin:0;max-width:62ch;text-wrap:pretty}
+.lead{font-size:clamp(18px,1.6vw,22px);line-height:1.5}
+.mono{font:500 12px/1.4 var(--f-mono);letter-spacing:.06em}
+.head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.head .t{grid-column:1/8;display:grid;gap:22px}
+.head .d{grid-column:8/13}
+@media (max-width:860px){.head .t,.head .d{grid-column:1/-1}}
+.ico{display:block}
+
+/* cover */
+.cover{background:var(--teal-deep);color:#EAF3F2;min-height:min(100svh,940px);display:grid;grid-template-rows:auto 1fr auto;padding-block:28px;position:relative;overflow:hidden}
+.cover .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cover .mid{display:grid;place-items:center;align-content:center;gap:28px;padding-block:48px;text-align:center}
+.cover .mid img{width:min(640px,86%)}
+.cover .mid p{font:400 italic clamp(26px,3.2vw,44px)/1.1 var(--f-serif);color:var(--magenta-hi);max-width:none}
+.cover .ghost{position:absolute;right:-8%;bottom:-18%;width:min(560px,60vw);opacity:.08;pointer-events:none}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));border-top:1px solid var(--line)}
+.toc a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:18px 24px 18px 0;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;font:600 clamp(18px,1.6vw,22px)/1.1 var(--f-display);letter-spacing:-.02em;transition:color .3s var(--ease)}
+.toc a span{font:500 12px var(--f-mono);color:var(--muted)}
+.toc a:hover,.toc a:focus-visible{color:var(--magenta);outline:none}
+
+/* essenza */
+.ess{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.ess .big{grid-column:1/8;font:600 clamp(28px,3.6vw,52px)/1.1 var(--f-display);letter-spacing:-.03em}
+.ess .side{grid-column:9/13;display:grid;gap:18px;align-content:end}
+.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(48px,7vw,88px)}
+.val{border-radius:22px;background:rgba(255,255,255,.06);border:1px solid var(--line-d);padding:24px;display:grid;gap:12px;align-content:start}
+.val b{font:700 22px/1.1 var(--f-display);letter-spacing:-.02em}
+.val .n{font:500 12px var(--f-mono);color:var(--teal-hi)}
+@media (max-width:900px){.ess .big,.ess .side{grid-column:1/-1}.vals{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.vals{grid-template-columns:1fr}}
+
+/* logo */
+.lg{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.tile{border-radius:24px;position:relative;overflow:hidden;display:grid;place-items:center;padding:clamp(28px,5vw,60px);min-height:260px}
+.tile .cap{position:absolute;left:18px;bottom:16px;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.t12{grid-column:1/-1;min-height:min(50vw,480px)}.t6{grid-column:span 6}.t4{grid-column:span 4}
+@media (max-width:860px){.t6,.t4{grid-column:1/-1}}
+.on-deep{background:var(--teal-deep);color:#EAF3F2}.on-teal{background:var(--teal);color:#fff}.on-mag{background:var(--magenta);color:#fff}.on-paper{background:var(--paper-2);color:var(--teal-deep)}.on-ink{background:var(--ink);color:#EAF3F2}
+.tile img.logo{width:min(560px,78%)}
+.tile.t6 img.logo,.tile.t4 img.logo{width:84%}
+.logo-teal{filter:brightness(0) saturate(100%) invert(22%) sepia(29%) saturate(1300%) hue-rotate(155deg) brightness(92%)}
+.tile svg.ico{width:min(150px,44%)}
+.anat{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,64px);align-items:center;margin-top:clamp(48px,7vw,88px)}
+@media (max-width:860px){.anat{grid-template-columns:1fr}}
+.anat-fig{background:var(--paper-2);border-radius:24px;padding:clamp(40px,7vw,96px);position:relative}
+.anat-fig .box{outline:1.5px dashed rgba(207,18,89,.6);outline-offset:clamp(16px,3vw,36px)}
+.anat-fig .x{position:absolute;font:500 11px var(--f-mono);color:var(--magenta)}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.list li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.list li b{font:600 12px/1.4 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+@media (max-width:520px){.list li{grid-template-columns:1fr;gap:4px}}
+.donts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(40px,6vw,72px)}
+@media (max-width:900px){.donts{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.donts{grid-template-columns:1fr}}
+.dont{display:grid;gap:10px}
+.dont .tile{min-height:170px;padding:28px}
+.dont .tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1.5px),var(--magenta) calc(50% - 1.5px),var(--magenta) calc(50% + 1.5px),transparent calc(50% + 1.5px))}
+.dont p{font-size:14px}
+
+/* colore */
+.sw{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.c{border-radius:22px;padding:22px;min-height:280px;display:grid;align-content:space-between;gap:24px}
+.c.big{grid-column:span 4;min-height:380px}.c.sm{grid-column:span 4}
+@media (max-width:900px){.c.big,.c.sm{grid-column:span 6}}
+@media (max-width:520px){.c.big,.c.sm{grid-column:1/-1}}
+.c .nm{font:700 clamp(24px,2.4vw,34px)/1 var(--f-display);letter-spacing:-.03em}
+.c .rl{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;opacity:.8;margin-top:8px}
+.c dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0;font:400 12px/1.5 var(--f-mono)}
+.c dt{opacity:.7}.c dd{margin:0}
+.ratio{display:flex;height:64px;border-radius:14px;overflow:hidden;margin-top:36px}
+.ratio div{display:flex;align-items:flex-end;padding:10px 12px;font:500 11px var(--f-mono)}
+
+/* tipografia */
+.type-hero{font:800 clamp(64px,13vw,210px)/.86 var(--f-display);letter-spacing:-.05em;margin:28px 0 clamp(40px,6vw,72px)}
+.type-hero em{font:400 italic 1.02em var(--f-serif);color:var(--magenta-hi);letter-spacing:-.02em}
+.fonts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:860px){.fonts{grid-template-columns:1fr}}
+.font{border:1px solid var(--line-d);border-radius:22px;padding:26px;display:grid;gap:18px;align-content:start;min-width:0}
+.font .sp{font-size:clamp(40px,5.4vw,80px);line-height:.95;overflow-wrap:anywhere}
+.font .meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.scale{margin-top:clamp(40px,6vw,72px);border-top:1px solid var(--line-d)}
+.scale div{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line-d);min-width:0}
+.scale div>*{min-width:0;overflow-wrap:anywhere}
+@media (max-width:620px){.scale div{grid-template-columns:1fr;gap:6px}}
+
+/* fotografia */
+.ph{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(110px,11vw,160px);gap:12px}
+.ph figure{margin:0;border-radius:20px;overflow:hidden;position:relative;background:var(--paper-2)}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph .a{grid-column:span 7;grid-row:span 3}.ph .b{grid-column:span 5;grid-row:span 3}.ph .c4{grid-column:span 4;grid-row:span 3}.ph .c3{grid-column:span 3;grid-row:span 2}.ph .c6{grid-column:span 6;grid-row:span 3}
+@media (max-width:860px){.ph{grid-template-columns:repeat(6,1fr);grid-auto-rows:110px}.ph .a,.ph .b,.ph .c6{grid-column:1/-1}.ph .c4,.ph .c3{grid-column:span 3}}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:clamp(40px,6vw,64px)}
+@media (max-width:760px){.rules{grid-template-columns:1fr}}
+.rule{border-radius:22px;padding:24px;display:grid;gap:12px;align-content:start}
+.rule.si{background:var(--white)}
+.rule.no{border:1px solid var(--line)}
+.rule ul{margin:0;padding-left:1.1em;display:grid;gap:8px}
+.rule .tag{font:600 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+.rule.si .tag{color:var(--teal)}.rule.no .tag{color:var(--magenta)}
+
+/* elementi */
+.els{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:860px){.els{grid-template-columns:1fr}}
+.el{border-radius:22px;background:var(--white);padding:22px;display:grid;gap:14px;align-content:start}
+.el .stage{height:210px;border-radius:16px;position:relative;overflow:hidden;display:grid;place-items:center}
+.pattern{position:absolute;inset:0;background-image:var(--pat);background-size:72px 72px}
+.dash{width:84%;height:4px;background-image:linear-gradient(90deg,var(--magenta) 0 14px,transparent 14px 26px);background-size:26px 4px;position:relative}
+.dash::before,.dash::after{content:"";position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:var(--teal);transform:translateY(-50%)}
+.dash::before{left:-4px}.dash::after{right:-4px;background:var(--magenta)}
+.counter{font:800 clamp(64px,7vw,96px)/1 var(--f-display);letter-spacing:-.05em;color:var(--magenta-hi)}
+.counter small{font-size:.45em;color:#EAF3F2}
+
+/* voce */
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.voice{grid-template-columns:1fr}}
+.vc{border-radius:22px;padding:26px;display:grid;gap:12px;align-content:start}
+.vc.si{background:var(--paper);color:var(--text)}.vc.no{border:1px solid var(--line-d)}
+.vc ul{list-style:none;margin:0;padding:0}
+.vc li{padding:13px 0;border-bottom:1px solid rgba(127,127,127,.25);font:500 clamp(16px,1.4vw,19px)/1.35 var(--f-body)}
+.vc .tag{font:600 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+
+/* applicazioni */
+.apps{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.app{border-radius:22px;overflow:hidden;position:relative;display:grid;place-items:center;min-height:380px;padding:32px}
+.app .cap{position:absolute;left:18px;top:16px;font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+.a4{grid-column:span 4}
+@media (max-width:980px){.a4{grid-column:1/-1}}
+.card{width:min(280px,90%);aspect-ratio:85/55;border-radius:10px;padding:16px;display:grid;box-shadow:0 22px 34px -20px rgba(7,21,25,.55)}
+.card.f{background:var(--teal-deep);place-items:center;transform:rotate(-6deg)}
+.card.f img{width:82%}
+.card.b{background:var(--paper);color:var(--text);transform:rotate(4deg) translate(16px,-44px);margin-bottom:-44px;grid-template-rows:auto 1fr auto}
+.card.b b{font:700 15px var(--f-display)}
+.card.b .mono{font-size:8.5px}
+.sign{width:min(250px,90%);aspect-ratio:3/4;background:var(--magenta);border-radius:8px;color:#fff;padding:20px;display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 22px 34px -20px rgba(7,21,25,.55)}
+.sign .v{font:800 46px/.9 var(--f-display);letter-spacing:-.04em;align-self:center}
+.sign .v em{display:block;font:400 italic .62em var(--f-serif);letter-spacing:0}
+.sign svg{width:46px}
+.post{width:min(270px,90%);aspect-ratio:4/5;border-radius:8px;overflow:hidden;position:relative;box-shadow:0 22px 34px -20px rgba(7,21,25,.55)}
+.post img{width:100%;height:100%;object-fit:cover}
+.post .ov{position:absolute;inset:auto 0 0 0;padding:18px;background:linear-gradient(transparent,rgba(7,21,25,.85));color:#fff}
+.post .ov b{font:700 22px/1.05 var(--f-display);letter-spacing:-.02em}
+.post .ov em{font:400 italic 1.1em var(--f-serif);color:var(--magenta-hi)}
+footer.end{background:var(--ink);color:#EAF3F2;padding-block:56px 28px}
+footer.end .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <!-- Icona del marchio: casa con camino e chiave a forma di cuore (ricostruita dall'icona ufficiale).
+       Il colore della casa è currentColor, quello della chiave è la variabile --k. -->
+  <symbol id="is-icon" viewBox="0 0 100 100">
+    <path fill="currentColor" d="M47.6 11.9 Q50 9.8 52.4 11.9 L89.4 44.3 Q92 46.6 88.5 47.8 H82 V85.5 Q82 89 78.5 89 H21.5 Q18 89 18 85.5 V47.8 H11.5 Q8 46.6 10.6 44.3 L24 32.6 V23.5 Q24 22 25.5 22 H30.5 Q32 22 32 23.5 V25.6 Z"/>
+    <g transform="rotate(-40 43 46)" style="fill:var(--k,#2F7286);stroke:var(--k,#2F7286)" stroke-linecap="round">
+      <path stroke="none" transform="translate(43 44) scale(1.18) translate(-43 -44)" d="M43 58 C36.5 52.5 31 48 31 42 C31 38 34 35 37.6 35 C40.2 35 42 36.6 43 38.6 C44 36.6 45.8 35 48.4 35 C52 35 55 38 55 42 C55 48 49.5 52.5 43 58 Z"/>
+      <path fill="none" stroke-width="5.5" d="M43 58 V84"/>
+      <path fill="none" stroke-width="4" d="M43 74.5 H37 M43 80.5 H37"/>
+    </g>
+  </symbol>
+</defs></svg>
+
+<header class="cover wrap">
+  <svg class="ghost" viewBox="0 0 100 100" aria-hidden="true" style="color:#fff;--k:#174452"><use href="#is-icon"/></svg>
+  <div class="row inner" style="width:100%"><span class="mono">IMMOBILIARE SOCIALE — BRAND BOOK</span><span class="mono">V.01 · 2026 · A CURA DI OYRA STUDIO</span></div>
+  <div class="mid">
+    <img src="img/logo.png" alt="Immobiliare sociale by Pellicciotta Immobili">
+    <p>Vendi casa e fai una buona azione.</p>
+  </div>
+  <div class="row inner" style="width:100%"><span class="mono">Logo · Colore · Caratteri · Fotografia · Voce · Applicazioni</span><span class="mono">Milano</span></div>
+</header>
+
+<section class="band wrap">
+  <div class="inner">
+    <div class="head"><div class="t"><span class="lbl">Indice</span><h2>Un marchio <em class="s">che restituisce</em></h2></div>
+      <p class="d">Queste pagine raccolgono le regole del marchio Immobiliare Sociale, così che sito, cartelli, social e documenti parlino con la stessa voce: concreta, trasparente e calda.</p></div>
+    <nav class="toc" aria-label="Sezioni">
+      <a href="#essenza">Essenza <span>01</span></a><a href="#logo">Logo <span>02</span></a><a href="#colore">Colore <span>03</span></a><a href="#caratteri">Caratteri <span>04</span></a>
+      <a href="#fotografia">Fotografia <span>05</span></a><a href="#elementi">Elementi <span>06</span></a><a href="#voce">Voce <span>07</span></a><a href="#applicazioni">Applicazioni <span>08</span></a>
+    </nav>
+  </div>
+</section>
+
+<section class="band deep wrap" id="essenza">
+  <div class="inner">
+    <span class="lbl">01 — Essenza</span>
+    <div class="ess" style="margin-top:32px">
+      <p class="big">Per ogni casa venduta o affittata, il 50% della provvigione netta va in beneficenza, a un ente <em class="s">scelto da chi vende.</em></p>
+      <div class="side"><p>Immobiliare Sociale nasce da Pellicciotta Immobili, agenzia di famiglia attiva a Milano da oltre 35 anni. Fabio ha costruito la fiducia, Giulia l'ha trasformata in un gesto concreto per il territorio.</p></div>
+    </div>
+    <div class="vals">
+      <div class="val"><span class="n">01</span><b>Fiducia</b><p>Oltre 35 anni a Milano. Le persone si fidano delle persone.</p></div>
+      <div class="val"><span class="n">02</span><b>Trasparenza</b><p>La donazione va direttamente all'ente: non transita dall'agenzia.</p></div>
+      <div class="val"><span class="n">03</span><b>Concretezza</b><p>Importi, enti e progetti sono sempre mostrati con nomi e foto.</p></div>
+      <div class="val"><span class="n">04</span><b>Calore</b><p>Un'agenzia di famiglia che parla come si parla in famiglia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band wrap" id="logo">
+  <div class="inner">
+    <div class="head"><div class="t"><span class="lbl">02 — Logo</span><h2>La casa <em class="s">e la chiave</em></h2></div>
+      <p class="d">L'icona è una casa con il camino che custodisce una chiave a forma di cuore: vendere una casa apre una porta anche per qualcun altro. Il logotipo è sempre accompagnato dalla firma "by Pellicciotta Immobili".</p></div>
+    <div class="lg">
+      <div class="tile t12 on-deep"><img class="logo" src="img/logo.png" alt="Logo principale"><span class="cap">Logo principale · bianco su teal profondo</span></div>
+      <div class="tile t6 on-paper"><img class="logo logo-teal" src="img/logo.png" alt=""><span class="cap" style="color:var(--teal)">Teal su carta</span></div>
+      <div class="tile t6 on-mag"><img class="logo" src="img/logo.png" alt=""><span class="cap">Bianco su magenta</span></div>
+      <div class="tile t4 on-teal"><svg class="ico" viewBox="0 0 100 100" style="color:#fff;--k:#2F7286" aria-hidden="true"><use href="#is-icon"/></svg><span class="cap">Icona · avatar e favicon</span></div>
+      <div class="tile t4 on-paper"><svg class="ico" viewBox="0 0 100 100" style="color:#2F7286;--k:#EDE5DA" aria-hidden="true"><use href="#is-icon"/></svg><span class="cap" style="color:var(--teal)">Icona teal</span></div>
+      <div class="tile t4 on-ink"><svg class="ico" viewBox="0 0 100 100" style="color:#CF1259;--k:#071519" aria-hidden="true"><use href="#is-icon"/></svg><span class="cap">Icona magenta su inchiostro</span></div>
+    </div>
+    <div class="anat">
+      <div class="anat-fig"><div class="box"><img class="logo-teal" src="img/logo.png" alt=""></div>
+        <span class="x" style="top:12px;left:50%;transform:translateX(-50%)">X</span><span class="x" style="bottom:12px;left:50%;transform:translateX(-50%)">X</span>
+        <span class="x" style="left:12px;top:50%;transform:translateY(-50%)">X</span><span class="x" style="right:12px;top:50%;transform:translateY(-50%)">X</span></div>
+      <ul class="list">
+        <li><b>Area di rispetto</b><span>Spazio libero pari all'altezza della casa (X) su ogni lato.</span></li>
+        <li><b>Misura minima</b><span>Logo completo 140 px / 35 mm. Icona da sola 24 px / 6 mm.</span></li>
+        <li><b>Colori</b><span>Bianco su teal profondo (preferito), teal su carta, bianco su magenta o su foto scure.</span></li>
+        <li><b>Firma</b><span>"by Pellicciotta Immobili" non si toglie dal logo completo.</span></li>
+      </ul>
+    </div>
+    <div class="donts">
+      <div class="dont"><div class="tile on-deep"><img class="logo" src="img/logo.png" alt="" style="transform:scaleX(1.4) scaleY(.7)"></div><p><b>Non deformare</b> il logo.</p></div>
+      <div class="dont"><div class="tile" style="background:#4FB3C8"><img class="logo" src="img/logo.png" alt=""></div><p><b>Non usare fondi chiari</b> con il logo bianco.</p></div>
+      <div class="dont"><div class="tile on-paper"><img class="logo logo-teal" src="img/logo.png" alt="" style="transform:rotate(-12deg);filter:drop-shadow(6px 8px 0 #CF1259)"></div><p><b>Non ruotare</b> e non aggiungere effetti.</p></div>
+      <div class="dont"><div class="tile" style="background:url(img/ente-6.jpg) center/cover"><img class="logo logo-teal" src="img/logo.png" alt=""></div><p><b>Non usare foto chiare</b> o movimentate dietro al logo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band paper2 wrap" id="colore">
+  <div class="inner">
+    <div class="head"><div class="t"><span class="lbl">03 — Colore</span><h2>Fiducia <em class="s">e calore</em></h2></div>
+      <p class="d">Il teal racconta l'affidabilità di un'agenzia storica; il magenta è il gesto, la buona azione. La carta calda tiene tutto vicino alle persone.</p></div>
+    <div class="sw">
+      <div class="c big" style="background:#2F7286;color:#fff"><div><div class="nm">Teal</div><div class="rl">Primario · marchio</div></div><dl><dt>HEX</dt><dd>#2F7286</dd><dt>RGB</dt><dd>47 · 114 · 134</dd></dl></div>
+      <div class="c big" style="background:#174452;color:#EAF3F2"><div><div class="nm">Teal profondo</div><div class="rl">Fondi scuri · titoli</div></div><dl><dt>HEX</dt><dd>#174452</dd><dt>RGB</dt><dd>23 · 68 · 82</dd></dl></div>
+      <div class="c big" style="background:#CF1259;color:#fff"><div><div class="nm">Magenta</div><div class="rl">Accento · pulsanti · corsivi</div></div><dl><dt>HEX</dt><dd>#CF1259</dd><dt>RGB</dt><dd>207 · 18 · 89</dd></dl></div>
+      <div class="c sm" style="background:#F6F1EA;color:#0B1C21;border:1px solid var(--line)"><div><div class="nm">Carta</div><div class="rl">Fondo principale</div></div><dl><dt>HEX</dt><dd>#F6F1EA</dd><dt>RGB</dt><dd>246 · 241 · 234</dd></dl></div>
+      <div class="c sm" style="background:#071519;color:#EAF3F2"><div><div class="nm">Inchiostro</div><div class="rl">Testo · tema scuro</div></div><dl><dt>HEX</dt><dd>#071519</dd><dt>RGB</dt><dd>7 · 21 · 25</dd></dl></div>
+      <div class="c sm" style="background:#4FB3C8;color:#071519"><div><div class="nm">Teal chiaro</div><div class="rl">Dettagli su fondo scuro</div></div><dl><dt>HEX</dt><dd>#4FB3C8</dd><dt>RGB</dt><dd>79 · 179 · 200</dd></dl></div>
+    </div>
+    <div class="ratio" aria-label="Proporzioni d'uso">
+      <div style="flex:44;background:#F6F1EA;border:1px solid var(--line)">44%</div><div style="flex:24;background:#174452;color:#EAF3F2">24%</div><div style="flex:14;background:#2F7286;color:#fff">14%</div><div style="flex:10;background:#071519;color:#EAF3F2">10%</div><div style="flex:6;background:#CF1259;color:#fff">6%</div><div style="flex:2;background:#4FB3C8"></div>
+    </div>
+    <p class="mono" style="margin-top:12px;color:var(--muted)">PROPORZIONI INDICATIVE IN UNA PAGINA · IL MAGENTA RESTA UN ACCENTO</p>
+  </div>
+</section>
+
+<section class="band ink wrap" id="caratteri">
+  <div class="inner">
+    <span class="lbl">04 — Caratteri</span>
+    <p class="type-hero">Casa, <em>cuore</em></p>
+    <div class="fonts">
+      <div class="font"><div class="meta"><span>Titoli</span><span>Google Fonts</span></div><div class="sp" style="font-family:var(--f-display);font-weight:700;letter-spacing:-.04em">Bricolage Grotesque</div><p>Per titoli e numeri grandi. Peso 600–800, spaziatura stretta, frasi brevi.</p></div>
+      <div class="font"><div class="meta"><span>Accento emotivo</span><span>Google Fonts</span></div><div class="sp" style="font-family:var(--f-serif);font-style:italic;color:var(--magenta-hi)">Instrument Serif</div><p>Solo corsivo, in magenta, per una o due parole dentro un titolo: "buona azione", "storia", "funziona".</p></div>
+      <div class="font"><div class="meta"><span>Testo</span><span>Google Fonts</span></div><div class="sp" style="font-family:var(--f-body);font-weight:600;letter-spacing:-.02em">Manrope</div><p>Per paragrafi, menu e pulsanti. Leggibile anche nei testi lunghi delle interviste.</p></div>
+      <div class="font"><div class="meta"><span>Etichette</span><span>Google Fonts</span></div><div class="sp" style="font-family:var(--f-mono);font-weight:500;font-size:clamp(30px,4vw,60px)">JetBrains Mono</div><p>Per etichette, cifre e didascalie, in maiuscolo con spaziatura ampia.</p></div>
+    </div>
+    <div class="scale">
+      <div><span class="mono" style="opacity:.6">H1 · 96 / 0.98</span><span style="font:800 clamp(40px,7vw,96px)/.98 var(--f-display);letter-spacing:-.04em">Vendi casa e fai una <em class="s">buona azione</em></span></div>
+      <div><span class="mono" style="opacity:.6">H2 · 56 / 1</span><span style="font:700 clamp(30px,4.4vw,56px)/1 var(--f-display);letter-spacing:-.035em">Come <em class="s">funziona?</em></span></div>
+      <div><span class="mono" style="opacity:.6">TESTO · 17 / 1.6</span><span style="font:400 17px/1.6 var(--f-body)">Ci affidi la gestione del tuo immobile alle migliori tariffe di mercato. L'ente beneficiario lo decidi tu.</span></div>
+      <div><span class="mono" style="opacity:.6">ETICHETTA · 12</span><span class="mono" style="letter-spacing:.12em;text-transform:uppercase">immobiliaresociale.it · Milano</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band wrap" id="fotografia">
+  <div class="inner">
+    <div class="head"><div class="t"><span class="lbl">05 — Fotografia</span><h2>Persone, <em class="s">non cartelli</em></h2></div>
+      <p class="d">Le foto mostrano chi abita le case e chi riceve le donazioni: volti veri, luce naturale, stanze vissute, il centro di Milano. Mai scritte, loghi o slogan dentro l'immagine.</p></div>
+    <div class="ph">
+      <figure class="a"><img src="img/serv-2.jpg" alt="Una famiglia sul divano di casa" loading="lazy"></figure>
+      <figure class="b"><img src="img/generazione.jpg" alt="Fabio e Giulia con un attestato" loading="lazy"></figure>
+      <figure class="c4"><img src="img/about-1.jpg" alt="Soggiorno luminoso" loading="lazy"></figure>
+      <figure class="c4"><img src="img/ente-3.jpg" alt="Un uomo anziano seduto in strada" loading="lazy"></figure>
+      <figure class="c4"><img src="img/origini.jpg" alt="Il Duomo di Milano in bianco e nero" loading="lazy"></figure>
+      <figure class="c6"><img src="img/beroboka-classe.jpg" alt="Una classe del progetto Liceo Beroboka" loading="lazy"></figure>
+      <figure class="c6"><img src="img/agenzia.jpg" alt="Palazzi di Milano" loading="lazy"></figure>
+      <figure class="c3"><img src="img/about-2.jpg" alt="Consegna delle chiavi" loading="lazy"></figure>
+      <figure class="c3"><img src="img/serv-1.jpg" alt="Una coppia di anziani sorridente" loading="lazy"></figure>
+      <figure class="c3"><img src="img/ente-1.jpg" alt="Un ragazzo con gli occhiali" loading="lazy"></figure>
+      <figure class="c3"><img src="img/serv-4.jpg" alt="Soggiorno con divano verde" loading="lazy"></figure>
+    </div>
+    <div class="rules">
+      <div class="rule si"><span class="tag">Sì</span><ul><li>Volti e mani, momenti veri tra persone</li><li>Le donazioni documentate: consegna, enti, progetti</li><li>Case luminose e vissute, toni caldi</li><li>Milano riconoscibile, anche in bianco e nero</li></ul></div>
+      <div class="rule no"><span class="tag">No</span><ul><li>Scritte, loghi o slogan sulle foto</li><li>Stock freddo da ufficio e strette di mano generiche</li><li>Pietismo: chi riceve aiuto è sempre ritratto con dignità</li><li>Filtri pesanti o colori saturi fuori palette</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band paper2 wrap" id="elementi">
+  <div class="inner">
+    <div class="head"><div class="t"><span class="lbl">06 — Elementi</span><h2>Segni <em class="s">ricorrenti</em></h2></div>
+      <p class="d">Pochi elementi, sempre gli stessi: rendono riconoscibile il marchio anche dove il logo non c'è.</p></div>
+    <div class="els">
+      <div class="el"><div class="stage" style="background:var(--magenta)"><div class="pattern" id="pat"></div></div><h3>Motivo con l'icona</h3><p>L'icona ripetuta in una trama leggera, per fondi, retro dei biglietti e copertine social.</p></div>
+      <div class="el"><div class="stage" style="background:var(--paper)"><div class="dash"></div></div><h3>Il percorso tratteggiato</h3><p>Una linea tratteggiata collega i tre passaggi: affidamento, scelta, donazione.</p></div>
+      <div class="el"><div class="stage" style="background:var(--teal-deep)"><span class="counter">50<small>%</small></span></div><h3>Le cifre</h3><p>Numeri grandi e veri: il 50% della provvigione, gli anni di attività, gli importi donati.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band deep wrap" id="voce">
+  <div class="inner">
+    <div class="head"><div class="t"><span class="lbl">07 — Tono di voce</span><h2>Come <em class="s">parliamo</em></h2></div>
+      <p class="d">Si dà del tu, si spiega con parole semplici e si mostrano sempre i fatti: chi, quanto, per cosa.</p></div>
+    <div class="voice">
+      <div class="vc si"><span class="tag" style="color:var(--teal)">Scriviamo così</span><ul><li>L'ente beneficiario lo decidi tu.</li><li>Non aggiungi un euro di tasca tua.</li><li>La somma va direttamente all'ente.</li><li>Vendi casa e fai una buona azione.</li></ul></div>
+      <div class="vc no"><span class="tag" style="color:var(--magenta-hi)">Non così</span><ul><li>Soluzioni immobiliari a impatto sociale.</li><li>Valorizziamo il tuo asset con responsabilità.</li><li>Un progetto di CSR innovativo.</li><li>Contattaci per ulteriori informazioni.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="band wrap" id="applicazioni">
+  <div class="inner">
+    <div class="head"><div class="t"><span class="lbl">08 — Applicazioni</span><h2>Il marchio <em class="s">in giro</em></h2></div>
+      <p class="d">Tre esempi di come il sistema si applica: il biglietto da visita, il cartello in vetrina e un post per i social.</p></div>
+    <div class="apps">
+      <div class="app a4" style="background:var(--paper-2)"><span class="cap" style="color:var(--teal)">Biglietto da visita</span><div><div class="card f"><img src="img/logo.png" alt=""></div><div class="card b"><svg viewBox="0 0 100 100" style="width:26px;color:#2F7286;--k:#F6F1EA" aria-hidden="true"><use href="#is-icon"/></svg><b>Immobiliare Sociale</b><span class="mono">VIA SCALDASOLE 3, MILANO · IMMOBILIARESOCIALE.IT</span></div></div></div>
+      <div class="app a4" style="background:var(--teal-deep)"><span class="cap" style="color:#EAF3F2">Cartello vendesi</span><div class="sign"><svg viewBox="0 0 100 100" style="color:#fff;--k:#CF1259" aria-hidden="true"><use href="#is-icon"/></svg><span class="v">Vendesi<em>e fa del bene</em></span><span class="mono">IMMOBILIARESOCIALE.IT</span></div></div>
+      <div class="app a4" style="background:var(--paper-2)"><span class="cap" style="color:var(--teal)">Post social 4:5</span><div class="post"><img src="img/serv-2.jpg" alt=""><div class="ov"><b>Una casa venduta, <em>una scuola</em> che cresce.</b></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="end wrap">
+  <div class="inner">
+    <img src="img/logo.png" alt="Immobiliare sociale by Pellicciotta Immobili" style="width:min(420px,80%)">
+    <div class="row"><span class="mono">BRAND BOOK V.01 · 2026</span><span class="mono">A cura di OYRA Studio</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // trama con l'icona per il motivo decorativo
+  var house = document.querySelector('#is-icon path').getAttribute('d');
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72"><g transform="translate(18 18) scale(.36)"><path fill="none" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="5" stroke-linejoin="round" d="' + house + '"/></g></svg>';
+  document.documentElement.style.setProperty('--pat', 'url("data:image/svg+xml,' + encodeURIComponent(svg) + '")');
+})();
+</script>
