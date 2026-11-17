@@ -169,7 +169,7 @@ def journal_teaser():
 
 
 def fill(s):
-    return (s.replace('{{PROJECT_CARDS}}', cards()).replace('{{PROJECT_ROWS_FLAT}}', rows(False)).replace('{{PROJECT_ROWS}}', rows())
+    return (s.replace('{{N_PROJECTS}}', f'({len(PROJECTS):02d})').replace('{{PROJECT_CARDS}}', cards()).replace('{{PROJECT_ROWS_FLAT}}', rows(False)).replace('{{PROJECT_ROWS}}', rows())
              .replace('{{CTA}}', cta()).replace('{{JOURNAL_TEASER}}', journal_teaser())
              .replace('{{JOURNAL_FEATURED}}', jfeatured(ARTICLES[0]))
              .replace('{{JOURNAL_CARDS}}', '\n'.join(jcard(a) for a in ARTICLES[1:]) if len(ARTICLES) > 1 else '')
@@ -177,7 +177,31 @@ def fill(s):
 
 
 def txt(c):
-    return '#1B0A10' if c in ('#F7C6CE', '#E4DFC3', '#EFECD7', '#FF6A2B') else '#EFECD7'
+    r, g, b = (int(c[i:i + 2], 16) for i in (1, 3, 5))
+    return '#1B0A10' if (0.299 * r + 0.587 * g + 0.114 * b) > 150 else '#EFECD7'
+
+
+ORBIT = ('<svg viewBox="0 0 128 128" aria-hidden="true"><path d="M91 22c-9-7-20-11-32-11C30 11 7 35 7 64s23 53 52 53 52-24 52-53c0-8-2-16-5-23M87 31c9 7 15 19 15 33 0 24-19 43-43 43S16 88 16 64s19-43 43-43c10 0 20 4 28 10" '
+         'fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="94" cy="20" r="5" fill="currentColor"/></svg>')
+
+
+def photo_gallery(p):
+    tiles = ''.join(f'<figure class="g ph {w}"><img src="assets/img/{p["slug"]}/{f}.jpg" alt="{html.escape(c)}" loading="lazy"><figcaption class="cap">{c}</figcaption></figure>' for f, w, c in p['photos'])
+    pal = ''.join(f'<span style="background:{h};color:{txt(h)}"><b>{n}</b>{h}</span>' for n, h in p['palette'])
+    bg, ac, ink = p['colors']
+    return f'''  <section class="sec bg-crema wrap" data-header="dark" style="padding-top:0">
+    <div class="gal" data-reveal data-stagger>{tiles}</div>
+  </section>
+
+  <section class="sec wrap brand-sys" data-header="dark" style="background:{bg};color:{ink}">
+    <div class="sec-top"><h2 class="sec-title split" style="font-size:clamp(40px,6vw,100px)">Il <span class="serif">sistema</span></h2><span class="mono" style="opacity:.7">Dal brand book</span></div>
+    <div class="gal" data-reveal data-stagger>
+      <div class="g w5 g-mark" style="background:{ink};color:{bg}">{ORBIT}<span class="cap">Il segno · un cerchio aperto, un punto di luce</span></div>
+      <div class="g w7 g-quote" style="background:{ac};color:{ink}"><p>{p['quote']}</p><span class="cap">{p['fonts']}</span></div>
+      <div class="g w12 g-pal6">{pal}</div>
+    </div>
+  </section>
+'''
 
 
 def project_page(i, p):
@@ -213,7 +237,7 @@ def project_page(i, p):
     </div>
   </section>
 
-  <section class="sec bg-crema wrap" data-header="dark" style="padding-top:0">
+{photo_gallery(p) if p.get('photos') else f'''  <section class="sec bg-crema wrap" data-header="dark" style="padding-top:0">
     <div class="gal" data-reveal data-stagger>
       <div class="g w7 cover {p['cv']}" style="border-radius:22px"><div class="inner" style="transform:scale(1.15)">{p['cover']}</div></div>
       <div class="g w5 g-type"><span class="aa">Aa<em>a</em></span><span class="cap">Tipografia</span></div>
@@ -221,9 +245,10 @@ def project_page(i, p):
       <div class="g w7 g-mock">{mock}<span class="cap">Applicazioni</span></div>
     </div>
   </section>
-
+'''}
   <section class="sec bg-crema2 wrap" data-header="dark">
     <div class="deliv"><h2 class="split">Cosa <span class="serif" style="color:var(--rosso)">abbiamo fatto</span></h2><div class="dl" data-reveal>{deliv}</div></div>
+    {f'<p class="case-note mono">{p["note"]}</p>' if p.get('note') else ''}
   </section>
 
   <a class="next wrap end-round" href="progetto-{nx['slug']}.html" data-header="light" data-cursor="Apri">
@@ -286,6 +311,8 @@ def build_site():
         for d in (out, art): shutil.copy(root / 'src/assets' / f, d / 'assets' / f)
     star = (root / 'assets/oyra-star.svg').read_text()
     for d in (out, art): (d / 'assets/favicon.svg').write_text(star)
+    if (root / 'src/img').exists():
+        for d in (out, art): shutil.copytree(root / 'src/img', d / 'assets/img')
     for f in ('.htaccess', 'robots.txt', '404.html'):
         src = root / 'src/static' / f
         if src.exists(): shutil.copy(src, out / f)

@@ -2,6 +2,20 @@
 STAR = '<svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></svg>'
 
 PROJECTS = [
+  dict(slug='alori', name='Alori', client='Progetto di brand indipendente', place='Italia', year='2026',
+       cats='brand web', tags=['Branding','Web','Art direction'], cv='cv-photo',
+       cover='<img src="assets/img/alori/hero-wide.jpg" alt="Bottiglia di Alori su un tavolo all\'aperto" loading="lazy">',
+       colors=('#F3ECDF','#CFD86A','#1E2620'),
+       palette=[('Panna','#F3ECDF'),('Travertino','#E4D6C1'),('Notte','#1E2620'),('Oliva','#47502F'),('Bergamotto','#CFD86A'),('Pompelmo','#E98E7B')],
+       fonts='Instrument Serif · Instrument Sans · DM Mono',
+       summary="Un aperitivo botanico 0.0% da miscelare: nome, segno, gamma, rito e sito, ideati da OYRA come progetto di marca indipendente.",
+       challenge="Gli analcolici per l'aperitivo sembrano spesso un ripiego: bevande pronte, dolci, con un'immagine da succo di frutta. Volevamo immaginare una base da miscelare che avesse il carattere di un bitter e il tono di un prodotto adulto.",
+       idea="Alori si versa, si allunga con soda e si condivide: 50 ml e 100 ml di soda, con una scorza di pompelmo. Il segno è un'orbita aperta con un punto di luce, come un cerchio di persone attorno a un tavolo sempre pronto ad accogliere qualcuno in più. Colori presi dalla carta delle etichette, dalla pietra e dagli agrumi.",
+       deliv=['Nome, posizionamento e tono di voce','Segno "orbita" e logotipo','Palette, caratteri e brand book','Gamma di cinque profili ed etichette','Art direction e visualizzazioni di concept','Sito bilingue IT / EN con animazioni'],
+       photos=[('hero-wide','w12','Il momento'),('bottle-citrus','w5','Citrus, il profilo firma'),('pour','w7','Il rito: 50 ml'),('botanicals','w7','Le botaniche'),('soda-pour','w5','100 ml di soda'),('bottle-apricot','w4','Apricot & Sage'),('bottle-fig','w4','Green Fig'),('peel-macro','w4','Scorza di pompelmo'),('table','w12','Prima di cena, con chi vuoi')],
+       quote="Apri il momento.",
+       note="Prodotto, bottiglia e fotografie sono visualizzazioni di concept: Alori è un progetto di marca indipendente di OYRA, il prodotto è in sviluppo.",
+       mock='card'),
   dict(slug='forno-di-brera', name='Forno di Brera', client='Panificio di quartiere', place='Milano', year='2026',
        cats='brand', tags=['Branding','Packaging'], cv='cv-1',
        cover='<div class="loaf"></div><div class="t">Forno<em>di Brera</em></div>',
