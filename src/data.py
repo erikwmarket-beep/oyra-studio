@@ -4,7 +4,7 @@ STAR = '<svg viewBox="0 0 500 564" aria-hidden="true"><use href="#oyra-star"/></
 PROJECTS = [
   dict(slug='yagiu', name='Yagiu', client='Community di viaggiatori', place='Online · 5 lingue', year='2026',
        cats='brand web', tags=['Branding','Web design','Sviluppo'], cv='cv-photo',
-       cover='<img src="assets/img/yagiu/brand-logo.jpg" alt="Il logotipo Yagiu su giallo con le forme del marchio" loading="lazy">',
+       cover='<img src="assets/img/yagiu/brand-logo-white.jpg" alt="Il logotipo Yagiu bianco su giallo con le forme del marchio" loading="lazy">',
        colors=('#FFF4E9','#F7B32B','#562D2A'),
        palette=[('Crema','#FFF4E9'),('Giallo','#F7B32B'),('Teal','#3295A0'),('Azzurro','#6197C5'),('Corallo','#E8895E'),('Verde','#43A574'),('Marrone','#562D2A')],
        fonts='Cabinet Grotesk · Satoshi',
