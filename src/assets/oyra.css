@@ -570,3 +570,6 @@ fieldset.fld{border:0;margin:0;padding:0}
 @media (max-width:760px){.g-pal6{grid-template-columns:repeat(3,1fr)}.g-pal6 span{min-height:120px}}
 .brand-sys{position:relative;z-index:2}
 .case-note{max-width:640px;margin:clamp(32px,4vw,56px) 0 0;opacity:.7;text-transform:none;letter-spacing:.02em;line-height:1.5}
+.case-visit{margin-top:clamp(24px,3vw,40px);background:var(--p-ink);color:var(--p-bg)}
+.case-visit svg{width:11px}
+.case-visit:hover svg{transform:none}

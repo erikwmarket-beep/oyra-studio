@@ -196,7 +196,7 @@ def photo_gallery(p):
   <section class="sec wrap brand-sys" data-header="dark" style="background:{bg};color:{ink}">
     <div class="sec-top"><h2 class="sec-title split" style="font-size:clamp(40px,6vw,100px)">Il <span class="serif">sistema</span></h2><span class="mono" style="opacity:.7">Dal brand book</span></div>
     <div class="gal" data-reveal data-stagger>
-      <div class="g w5 g-mark" style="background:{ink};color:{bg}">{ORBIT}<span class="cap">Il segno · un cerchio aperto, un punto di luce</span></div>
+      <div class="g w5 g-mark" style="background:{ink};color:{bg}">{p.get('mark', ORBIT)}<span class="cap">{p.get('mark_cap', 'Il segno · un cerchio aperto, un punto di luce')}</span></div>
       <div class="g w7 g-quote" style="background:{ac};color:{ink}"><p>{p['quote']}</p><span class="cap">{p['fonts']}</span></div>
       <div class="g w12 g-pal6">{pal}</div>
     </div>
@@ -228,6 +228,7 @@ def project_page(i, p):
       <div><span class="mono">Anno</span><b>{p['year']}</b></div>
       <div><span class="mono">Servizi</span><b>{', '.join(p['tags'])}</b></div>
     </div>
+    {f'<a class="btn magnet case-visit" href="{p["url"]}" target="_blank" rel="noopener">Visita {p.get("url_label", "il sito")} {ARROW}</a>' if p.get('url') else ''}
   </section>
 
   <section class="sec bg-crema wrap" data-header="dark">
