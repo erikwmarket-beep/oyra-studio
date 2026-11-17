@@ -187,12 +187,15 @@ ORBIT = ('<svg viewBox="0 0 128 128" aria-hidden="true"><path d="M91 22c-9-7-20-
 
 def photo_gallery(p):
     tiles = ''.join(f'<figure class="g ph {w}"><img src="assets/img/{p["slug"]}/{f}.jpg" alt="{html.escape(c or p['name'])}" loading="lazy">{f'<figcaption class="cap">{c}</figcaption>' if c else ''}</figure>' for f, w, c in p['photos'])
-    pal = ''.join(f'<span style="background:{h};color:{txt(h)}"><b>{n}</b>{h}</span>' for n, h in p['palette'])
-    bg, ac, ink = p['colors']
-    return f'''  <section class="sec bg-crema wrap" data-header="dark" style="padding-top:0">
+    out = f'''  <section class="sec bg-crema wrap" data-header="dark" style="padding-top:0">
     <div class="gal" data-reveal data-stagger>{tiles}</div>
   </section>
-
+'''
+    if not p.get('palette'):  # la sezione "sistema" solo per i progetti in cui abbiamo fatto il branding
+        return out
+    pal = ''.join(f'<span style="background:{h};color:{txt(h)}"><b>{n}</b>{h}</span>' for n, h in p['palette'])
+    bg, ac, ink = p['colors']
+    return out + f'''
   <section class="sec wrap brand-sys" data-header="dark" style="background:{bg};color:{ink}">
     <div class="sec-top"><h2 class="sec-title split" style="font-size:clamp(40px,6vw,100px)">Il <span class="serif">sistema</span></h2><span class="mono" style="opacity:.7">Dal brand book</span></div>
     <div class="gal" data-reveal data-stagger>
